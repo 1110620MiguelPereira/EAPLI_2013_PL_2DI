@@ -4,3 +4,5 @@
 *.jar
 *.war
 *.ear
+/eapli.ExpenseManager/nbproject/private/
+/eapli.Util/nbproject/private/
