@@ -16,4 +16,6 @@ public class Math {
     public static int twice(int x) { return 2* x; }
     
     public int addOne(int x) { return x+1; }
+    
+    public static double half(int x) { return x / 2; }
 }
