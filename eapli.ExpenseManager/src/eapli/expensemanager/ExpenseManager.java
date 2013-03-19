@@ -4,6 +4,8 @@
  */
 package eapli.expensemanager;
 
+import eapli.expensemanager.presentation.MenuUI;
+
 /**
  *
  * @author Paulo Gandra Sousa
@@ -14,6 +16,7 @@ public class ExpenseManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MenuUI menu = new MenuUI();
+        menu.show();
     }
 }
