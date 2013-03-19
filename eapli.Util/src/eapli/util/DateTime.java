@@ -11,8 +11,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sun.util.calendar.CalendarDate;
-import sun.util.calendar.CalendarSystem;
 
 /**
  *
@@ -48,12 +46,27 @@ public class DateTime {
         return date;
     }
 
+    /**
+     * @deprecated
+     * 
+     * @param year
+     * @param month
+     * @param day
+     * @return 
+     */ 
     public static Date newDate(int year, int month, int day) {
         Calendar c = Calendar.getInstance();
         c.set(year, month - 1, day);
         return c.getTime();
     }
 
+    /**
+     * @deprecated
+     * 
+     * @param aDateString
+     * @param format
+     * @return 
+     */
     public static Date parseDate(String aDateString, String format) {
         try {
             SimpleDateFormat df = new SimpleDateFormat(format);
@@ -65,6 +78,12 @@ public class DateTime {
         return null;
     }
 
+    /**
+     * @deprecated
+     * 
+     * @param aDateString
+     * @return 
+     */
     public static Date parseDate(String aDateString) {
         return parseDate(aDateString, "dd-MM-yyyy");
     }
