@@ -6,6 +6,7 @@ package eapli.util;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,6 +44,19 @@ public class Console {
 
                 int valor = Integer.parseInt(strInt);
 
+                return valor;
+            } catch (NumberFormatException ex) {
+                Logger.getLogger(Console.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } while (true);
+    }
+
+    static public BigDecimal readBigDecimal(String strPrompt) {
+        do {
+            try {
+                String strInt = readLineFromConsole(strPrompt);
+
+                BigDecimal valor = new BigDecimal(strInt);
                 return valor;
             } catch (NumberFormatException ex) {
                 Logger.getLogger(Console.class.getName()).log(Level.SEVERE, null, ex);
