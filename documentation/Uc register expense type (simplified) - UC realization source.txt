@@ -1,0 +1,23 @@
+title register expense type simplifier
+
+
+
+User -> +MenuUI: Choose option "register type of expense"
+
+
+
+
+MenuUI -> +ExpenseTypeUI: create
+ExpenseTypeUI --> -MenuUI:
+
+ExpenseTypeUI -> RegisterExpenseTypeController: create
+
+User -> ExpenseTypeUI: enter type
+User -> ExpenseTypeUI: enter description
+User -> +ExpenseTypeUI: register type of expense
+
+ExpenseTypeUI -> +RegisterExpenseTypeController: create type of expense(type, descrip)
+
+RegisterExpenseTypeController -> ExpenseType: create(type,descrip)
+
+RegisterExpenseTypeController -> ExpenseTypeRepository: save(exptyp)
