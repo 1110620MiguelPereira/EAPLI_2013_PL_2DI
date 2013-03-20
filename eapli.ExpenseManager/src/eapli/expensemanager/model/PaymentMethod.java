@@ -8,6 +8,6 @@ package eapli.expensemanager.model;
  *
  * @author schmitzoide
  */
-public class PaymentMethod {
+public interface PaymentMethod {
     
 }
