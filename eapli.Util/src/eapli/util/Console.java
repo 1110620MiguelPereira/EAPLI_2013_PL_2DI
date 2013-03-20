@@ -65,7 +65,7 @@ public class Console {
     }
 
     // TODO refactor to readBoolean
-    static public boolean readBooleanFromConsole(String strPrompt) {
+    static public boolean readBoolean(String strPrompt) {
         do {
             try {
                 String strBool = readLineFromConsole(strPrompt).toLowerCase();
