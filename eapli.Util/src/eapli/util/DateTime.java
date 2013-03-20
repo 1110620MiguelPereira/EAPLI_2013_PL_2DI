@@ -41,6 +41,33 @@ public class DateTime {
         return weekNumber(today());
     }
 
+        public static Calendar firstDateOfWeek(int year, int week) {
+        Calendar date = new GregorianCalendar();
+        date.clear();
+        date.set(Calendar.YEAR, year);
+        date.set(Calendar.WEEK_OF_YEAR, week);
+        return date;
+    }
+    
+    public static Calendar lastDateOfWeek(int year, int week) {
+        Calendar date = firstDateOfWeek(year, week);
+        date.add(Calendar.DATE, 6);
+        return date;
+    }
+
+    public static int currentYear() {
+        return today().get(Calendar.YEAR);
+    }
+
+    /**
+     * returns the current month of the year
+     * 
+     * @return current month (1 - 12) of the year
+     */
+    public static int currentMonth() {
+        return today().get(Calendar.MONTH) + 1 ;
+    }
+
     public static Calendar newCalendarDate(int year, int month, int day) {
         Calendar date = new GregorianCalendar(year, month, day);
         return date;
