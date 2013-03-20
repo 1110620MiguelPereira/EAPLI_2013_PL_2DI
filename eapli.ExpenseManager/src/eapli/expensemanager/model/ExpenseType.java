@@ -4,8 +4,6 @@
  */
 package eapli.expensemanager.model;
 
-import java.math.BigDecimal;
-
 /**
  *
  * @author Paulo Gandra Sousa
