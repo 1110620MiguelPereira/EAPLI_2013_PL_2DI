@@ -1,0 +1,5 @@
+title New Card Registration (simplified)
+
+User -> System: enterBankName()
+User -> System: enterCardNumber()
+User -> System: registerCard()
