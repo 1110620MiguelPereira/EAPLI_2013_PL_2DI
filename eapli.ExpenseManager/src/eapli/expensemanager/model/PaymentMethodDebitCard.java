@@ -12,7 +12,8 @@ public class PaymentMethodDebitCard extends PaymentMethodCard{
 
     public PaymentMethodDebitCard() {
         super();
-    }  
+    } 
+    
     public PaymentMethodDebitCard(int number, String bankName) {
         super(number,bankName);
     }  
