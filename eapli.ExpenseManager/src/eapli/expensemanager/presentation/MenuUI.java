@@ -10,7 +10,7 @@ import eapli.util.Console;
  *
  * @author Paulo Gandra Sousa
  */
-public class MenuUI {
+public class MenuUI extends BaseUI{
 
     public void show() {
         System.out.println("EXPENSE MANAGER");

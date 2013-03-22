@@ -11,7 +11,7 @@ import eapli.util.Console;
  *
  * @author Paulo Gandra Sousa
  */
-class RegisterExpenseTypeUI {
+class RegisterExpenseTypeUI extends BaseUI{
 
     void show() {
         String type = Console.readLineFromConsole("Type:");

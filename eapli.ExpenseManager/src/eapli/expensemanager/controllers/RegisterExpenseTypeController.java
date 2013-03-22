@@ -12,7 +12,7 @@ import eapli.expensemanager.repositories.inmemory.InMemoryExpenseTypeRepository;
  *
  * @author Paulo Gandra Sousa
  */
-public class RegisterExpenseTypeController {
+public class RegisterExpenseTypeController extends BaseController{
 
     public void registerExpenseType(String type, String description) {
         ExpenseType expenseType = new ExpenseType(type, description);

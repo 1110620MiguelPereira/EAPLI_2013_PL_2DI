@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  *
  * @author Paulo Gandra Sousa
  */
-public class RegisterExpenseController {
+public class RegisterExpenseController extends BaseController{
 
     public void registerExpense(BigDecimal amount, String description) {
         Expense expense = new Expense(amount, description);

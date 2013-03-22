@@ -6,8 +6,12 @@ package eapli.expensemanager.controllers;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author António
  */
-public class RegisterPaymentMethodController extends BaseController{
+public class BaseController {
+
+    public int ExpensesOfWeek() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
     
 }

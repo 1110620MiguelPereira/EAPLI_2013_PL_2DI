@@ -10,7 +10,7 @@ import eapli.util.Console;
  *
  * @author Paulo Gandra Sousa
  */
-public class RegisterPaymentMethodUI {
+public class RegisterPaymentMethodUI extends BaseUI{
 
     void show() {
         System.out.println("Choos a payment method type:");
