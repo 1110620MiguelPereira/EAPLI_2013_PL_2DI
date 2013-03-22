@@ -6,16 +6,19 @@ package eapli.expensemanager.model;
 
 /**
  *
- * @author Pedro
+ * @author Pedro Branco
  */
-public class Card {
+public abstract class MethodTypeCard {
     
     int number;
     String bankName;
     
-    public Card(){}
+    public MethodTypeCard(){
+    }
     
-    public Card(int number, String bankName){ this.number = number; this.bankName=bankName;}
+    public MethodTypeCard(int number, String bankName){ 
+        this.number = number; this.bankName=bankName;
+    }
     
     
 }
