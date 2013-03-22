@@ -16,6 +16,7 @@ public class MenuUI {
         System.out.println("EXPENSE MANAGER");
         System.out.println("1. Register expense");
         System.out.println("2. Register expense type");
+        System.out.println("3. Register payment method");
         System.out.println("0. Exit");
         
         int option = Console.readIntegerFromConsole("Introduza uma opção:");
@@ -29,6 +30,10 @@ public class MenuUI {
             case 2:
                 RegisterExpenseTypeUI tui = new RegisterExpenseTypeUI();
                 tui.show();
+                break;
+            case 3:
+                RegisterPaymentMethodUI paymentMethodUI = new RegisterPaymentMethodUI();
+                paymentMethodUI.show();
                 break;
         }
     }
