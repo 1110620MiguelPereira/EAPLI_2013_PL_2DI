@@ -10,23 +10,29 @@ import eapli.util.Console;
  *
  * @author Paulo Gandra Sousa
  */
-public class RegisterPaymentMethodUI extends BaseUI{
+public class RegisterPaymentMethodUI extends BaseUI {
 
+    @Override
     void show() {
-        System.out.println("Choos a payment method type:");
+        System.out.println("Choose a payment method type:");
         System.out.println("1. debit card");
         System.out.println("2. credit card");
         System.out.println("3. cheque");
-                
-                int option = Console.readIntegerFromConsole("Introduza uma opção:");
-        switch (option) {
-            case 1:
-                break;
-            case 2:
-                break;
-                case 3: break;
-        }
-        
+        System.out.println("0. menu anterior\n");
+
+        int option;
+        do {
+            option = Console.readIntegerFromConsole("Introduza uma opção:");
+            switch (option) {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+        } while (option != 0);
     }
-    
 }
