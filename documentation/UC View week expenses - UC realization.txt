@@ -1,0 +1,14 @@
+title View week expenses
+
+BaseUI: create
+BaseUI-> +BaseController: create()
+
+BaseUI-> BaseController: ExpensesOfWeek()
+BaseController-> +ExpenseRepository: ExpensesOfWeek()
+
+loop
+ExpenseRepository->Expense: getAmount()
+ExpenseRepository->ExpenseRepository:addAmount()
+end
+
+ExpenseRepository->BaseController:return ExpensesOfWeek()

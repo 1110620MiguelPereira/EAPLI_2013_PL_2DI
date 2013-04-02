@@ -1,0 +1,11 @@
+title Register Payment Method Debit Card
+
+User->+RegisterPaymentMethodCardUI:choose option "register Debit Card"
+RegisterPaymentMethodCardUI --> 
+RegisterPaymentMethodCardUI -> RegisterPaymentMethodCardController: create
+User ->RegisterPaymentMethodCardUI : enter Bank Name
+User -> RegisterPaymentMethodCardUI : enter Number of Card
+User -> RegisterPaymentMethodCardUI : register Debit Card
+RegisterPaymentMethodCardUI -> +RegisterPaymentMethodCardController: register debitcard (bank, numcard)
+RegisterPaymentMethodCardController-> dbcard PaymentMethodDebitCard : create(bank, numcard)
+RegisterPaymentMethodCardController-> PaymentMethodRepository: save(dbcard)

@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  *
  * @author Paulo Gandra Sousa
  */
-class RegisterExpenseUI {
+class RegisterExpenseUI extends BaseUI{
 
     void show() {
         BigDecimal amount = Console.readBigDecimal("Amount:");

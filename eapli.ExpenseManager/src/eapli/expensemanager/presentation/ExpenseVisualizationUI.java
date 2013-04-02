@@ -8,6 +8,6 @@ package eapli.expensemanager.presentation;
  *
  * @author Big-D2xl
  */
-public class ExpenseVisualizationUI {
+public class ExpenseVisualizationUI extends BaseUI{
     
 }

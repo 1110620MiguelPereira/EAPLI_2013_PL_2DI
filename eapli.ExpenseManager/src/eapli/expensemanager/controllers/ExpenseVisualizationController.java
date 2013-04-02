@@ -8,6 +8,6 @@ package eapli.expensemanager.controllers;
  *
  * @author Big-D2xl
  */
-public class ExpenseVisualizationController {
+public class ExpenseVisualizationController extends BaseController{
     
 }
