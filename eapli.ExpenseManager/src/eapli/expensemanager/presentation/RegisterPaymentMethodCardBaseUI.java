@@ -10,7 +10,7 @@ import eapli.util.Console;
  *
  * @author Pedro
  */
-public class RegisterPaymentMethodCardBaseUI {
+public class RegisterPaymentMethodCardBaseUI extends BaseUI {
     
     String bankname;
     String cardnumber;
