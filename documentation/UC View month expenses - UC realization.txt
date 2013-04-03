@@ -1,0 +1,16 @@
+title view month expenses (simplified)
+
+BaseUI -> +BaseController: create
+BaseUI -> BaseController: expensesOfMonth()
+BaseController-> ExpenseRepository: expensesOfMonth()
+ 
+ExpenseRepository -> InMemoryExpenseRepository: expensesOfMonth()
+loop
+InMemoryExpenseRepository -> Expense: getDate()
+opt ifEqualsMonth
+InMemoryExpenseRepository -> Expense: getAmount()
+InMemoryExpenseRepository -> -InMemoryExpenseRepository: addAmount()
+end
+end
+ExpenseRepository --> -BaseController: Return expensesOfMonth()
+
