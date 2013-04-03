@@ -7,7 +7,7 @@ package eapli.expensemanager.controllers;
 import eapli.expensemanager.model.PaymentMethodCreditCard;
 import eapli.expensemanager.model.PaymentMethodDebitCard;
 import eapli.expensemanager.repositories.PaymentMethodRepository;
-import eapli.expensemanager.repositories.inmemory.InMemoryPaymentMethodRepository;
+import eapli.expensemanager.repositories.RepositoryFactory;
 
 /**
  *
@@ -19,14 +19,14 @@ public class RegisterPaymentMethodController extends BaseController{
         
         PaymentMethodDebitCard payMethodDebCard = new PaymentMethodDebitCard(cardNumber,bankName);
        
-        PaymentMethodRepository repoPayMetDebit = new InMemoryPaymentMethodRepository();
+        PaymentMethodRepository repoPayMetDebit = RepositoryFactory.instance().getPaymentMethodRepository();
         repoPayMetDebit.save(payMethodDebCard);
     }
      public void registerPaymentMethodCreditCard(String bankName, String cardNumber) {
         
         PaymentMethodCreditCard payMethodDebCard = new PaymentMethodCreditCard(cardNumber,bankName);
        
-        PaymentMethodRepository repoPayMetCredit = new InMemoryPaymentMethodRepository();
+        PaymentMethodRepository repoPayMetCredit = RepositoryFactory.instance().getPaymentMethodRepository();
         repoPayMetCredit.save(payMethodDebCard);
     }
 }
