@@ -6,6 +6,7 @@ package eapli.expensemanager.controllers;
 
 import eapli.expensemanager.model.Expense;
 import eapli.expensemanager.repositories.ExpenseRepository;
+import eapli.expensemanager.repositories.RepositoryFactory;
 import eapli.expensemanager.repositories.inmemory.InMemoryExpenseRepository;
 import java.math.BigDecimal;
 
@@ -19,7 +20,7 @@ public class RegisterExpenseController extends BaseController{
         Expense expense = new Expense(amount, description);
         
         // FIX provide alternative for creating the repository
-        ExpenseRepository repo = new InMemoryExpenseRepository();
+        ExpenseRepository repo = RepositoryFactory.instance().getExpenseRepository();
         repo.save(expense);
     }
     

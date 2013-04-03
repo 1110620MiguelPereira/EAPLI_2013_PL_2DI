@@ -1,0 +1,31 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package eapli.expensemanager.repositories;
+
+import eapli.expensemanager.repositories.inmemory.InMemoryExpenseRepository;
+import eapli.expensemanager.repositories.inmemory.InMemoryExpenseTypeRepository;
+
+/**
+ *
+ * @author Paulo Gandra Sousa
+ */
+public class RepositoryFactory {
+    
+    static RepositoryFactory _instance = new RepositoryFactory();
+    
+    private RepositoryFactory() { }
+    
+    public static RepositoryFactory instance() {
+        return _instance;
+    
+    }
+    public ExpenseRepository getExpenseRepository() {
+        return new InMemoryExpenseRepository();
+    }
+    
+    public ExpenseTypeRepository getExpenseTypeRepository() {
+        return new InMemoryExpenseTypeRepository();
+    }
+}
