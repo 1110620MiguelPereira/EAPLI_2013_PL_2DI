@@ -1,0 +1,21 @@
+title List expense type simplifier
+
+
+
+User -> +MenuUI: Choose option "List type of expense"
+
+
+
+
+MenuUI -> +ListExpenseTypeUI: create
+ListExpenseTypeUI --> -MenuUI:
+
+ListExpenseTypeUI -> RegisterListExpenseTypeController: create
+
+
+ListExpenseTypeUI -> +RegisterListExpenseTypeController: List
+
+
+RegisterListExpenseTypeController -> +ExpenseTypeRepository: List
+ExpenseTypeRepository--> -RegisterListExpenseTypeController:
+RegisterListExpenseTypeController --> -ListExpenseTypeUI:
