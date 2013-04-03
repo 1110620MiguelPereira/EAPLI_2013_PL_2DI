@@ -13,29 +13,36 @@ import eapli.util.Console;
 public class MenuUI extends BaseUI{
 
     public void show() {
-        System.out.println("EXPENSE MANAGER");
-        System.out.println("1. Register expense");
-        System.out.println("2. Register expense type");
-        System.out.println("3. Register payment method");
-        System.out.println("0. Exit");
         
-        int option = Console.readIntegerFromConsole("Introduza uma opção:");
-        switch (option) {
-            case 0:
-                return;
-            case 1:
-                RegisterExpenseUI ui = new RegisterExpenseUI();
-                ui.show();
-                break;
-            case 2:
-                RegisterExpenseTypeUI tui = new RegisterExpenseTypeUI();
-                tui.show();
-                break;
-            case 3:
-                RegisterPaymentMethodUI paymentMethodUI = new RegisterPaymentMethodUI();
-                paymentMethodUI.show();
-                break;
-        }
+ 
+        int option;
+        do {
+            
+       
+            System.out.println("EXPENSE MANAGER");
+            System.out.println("1. Register expense");
+            System.out.println("2. Register expense type");
+            System.out.println("3. Register payment method");
+            System.out.println("0. Exit");
+
+            option = Console.readIntegerFromConsole("Introduza uma opção:");
+            switch (option) {
+                case 0:
+                    return;
+                case 1:
+                    RegisterExpenseUI ui = new RegisterExpenseUI();
+                    ui.show();
+                    break;
+                case 2:
+                    RegisterExpenseTypeUI tui = new RegisterExpenseTypeUI();
+                    tui.show();
+                    break;
+                case 3:
+                    RegisterPaymentMethodUI paymentMethodUI = new RegisterPaymentMethodUI();
+                    paymentMethodUI.show();
+                    break;
+            }
+        } while (option != 0);
     }
     
 }

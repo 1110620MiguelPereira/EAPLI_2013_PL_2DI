@@ -14,21 +14,26 @@ public class RegisterPaymentMethodUI extends BaseUI {
 
     @Override
     void show() {
-        System.out.println("Choose a payment method type:");
-        System.out.println("1. debit card");
-        System.out.println("2. credit card");
-        System.out.println("3. cheque");
-        System.out.println("0. menu anterior\n");
+
 
         int option;
         do {
+            System.out.println("Choose a payment method type:");
+            System.out.println("1. debit card");
+            System.out.println("2. credit card");
+            System.out.println("3. cheque");
+            System.out.println("0. Sair\n");
             option = Console.readIntegerFromConsole("Introduza uma opção:");
             switch (option) {
                 case 0:
-                    break;
+                    return;
                 case 1:
+                    RegisterPaymentMethodDebitCardUI uiDebitCard = new RegisterPaymentMethodDebitCardUI();
+                    uiDebitCard.show();
                     break;
                 case 2:
+                    RegisterPaymentMethodCreditCardUI uiCreditCard = new RegisterPaymentMethodCreditCardUI();
+                    uiCreditCard.show();
                     break;
                 case 3:
                     break;

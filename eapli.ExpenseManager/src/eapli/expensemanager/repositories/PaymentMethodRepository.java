@@ -4,10 +4,12 @@
  */
 package eapli.expensemanager.repositories;
 
+import eapli.expensemanager.model.PaymentMethod;
+
 /**
  *
  * @author Paulo Gandra Sousa
  */
 public interface PaymentMethodRepository {
-    
+    public void save(PaymentMethod payMethod); 
 }

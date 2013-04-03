@@ -8,15 +8,15 @@ package eapli.expensemanager.model;
  *
  * @author Pedro Branco
  */
-public abstract class PaymentMethodCard {
+public abstract class PaymentMethodCard implements PaymentMethod{
     
-    int number;
+    String number;
     String bankName;
     
     public PaymentMethodCard(){
     }
     
-    public PaymentMethodCard(int number, String bankName){ 
+    public PaymentMethodCard(String number, String bankName){ 
         this.number = number; this.bankName=bankName;
     }
     

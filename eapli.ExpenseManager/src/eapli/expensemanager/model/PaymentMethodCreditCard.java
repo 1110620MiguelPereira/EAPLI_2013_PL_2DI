@@ -10,7 +10,7 @@ public class PaymentMethodCreditCard extends PaymentMethodCard {
         super();
     }
     
-    public PaymentMethodCreditCard(int number, String bankName){
+    public PaymentMethodCreditCard(String number, String bankName){
         super(number, bankName);
     }
 }

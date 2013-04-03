@@ -4,12 +4,22 @@
  */
 package eapli.expensemanager.repositories.inmemory;
 
+import eapli.expensemanager.model.PaymentMethod;
 import eapli.expensemanager.repositories.PaymentMethodRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Paulo Gandra Sousa
  */
 public class InMemoryPaymentMethodRepository implements PaymentMethodRepository{
-    
+
+     static List<PaymentMethod> methodsPayment = new ArrayList<PaymentMethod>();
+   
+     @Override
+    public void save(PaymentMethod payMethodDebCard) {
+         
+         methodsPayment.add(payMethodDebCard);
+    } 
 }
