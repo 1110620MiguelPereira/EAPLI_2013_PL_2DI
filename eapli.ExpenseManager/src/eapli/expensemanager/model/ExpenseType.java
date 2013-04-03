@@ -23,8 +23,5 @@ public class ExpenseType {
         this.type = type;
         this.description = description;
     }
-    public String toString(){  
-        return "\nType: " + type + "\nDescription: " + description;  
-    }
     
 }

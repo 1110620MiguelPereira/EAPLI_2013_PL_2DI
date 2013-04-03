@@ -15,28 +15,12 @@ import java.util.List;
  */
 public class InMemoryExpenseTypeRepository implements ExpenseTypeRepository{
 
-    private static List<ExpenseType> expensesType = new ArrayList<ExpenseType>();
-
-    /**
-     * @return the expensesType
-     */
-    public static List<ExpenseType> getExpensesType() {
-        return expensesType;
-    }
-     /**
-     *
-     * @return
-     */
-    @Override
-    public List<ExpenseType> getAll() {
-        return expensesType;
-    }
+    static List<ExpenseType> expensesType = new ArrayList<ExpenseType>();
     
     
     @Override
     public void save(ExpenseType expenseType) {
-        getExpensesType().add(expenseType);
+        expensesType.add(expenseType);
     }
-
     
 }
