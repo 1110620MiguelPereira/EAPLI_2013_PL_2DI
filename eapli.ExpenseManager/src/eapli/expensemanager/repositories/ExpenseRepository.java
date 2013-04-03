@@ -5,6 +5,7 @@
 package eapli.expensemanager.repositories;
 
 import eapli.expensemanager.model.Expense;
+import java.util.List;
 
 /**
  *
@@ -12,4 +13,5 @@ import eapli.expensemanager.model.Expense;
  */
 public interface ExpenseRepository {
     public void save(Expense expense);
+    public List<Expense> getListExpenses();
 }
