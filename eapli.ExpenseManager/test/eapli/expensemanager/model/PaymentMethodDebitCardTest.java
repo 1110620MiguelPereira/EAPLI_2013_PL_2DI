@@ -4,9 +4,6 @@
  */
 package eapli.expensemanager.model;
 
-import org.junit.*;
-import static org.junit.Assert.*;
-
 /**
  *
  * @author Adulcínio
