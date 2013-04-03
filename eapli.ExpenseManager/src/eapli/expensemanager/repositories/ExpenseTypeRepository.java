@@ -5,11 +5,17 @@
 package eapli.expensemanager.repositories;
 
 import eapli.expensemanager.model.ExpenseType;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Paulo Gandra Sousa
  */
 public interface ExpenseTypeRepository {
+    
     public void save(ExpenseType expenseType);
-}
+    public List<ExpenseType> getAll();
+   
+    }
+
