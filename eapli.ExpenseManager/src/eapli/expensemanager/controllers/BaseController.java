@@ -11,7 +11,8 @@ package eapli.expensemanager.controllers;
 public class BaseController {
 
     public int ExpensesOfWeek() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        //throw new UnsupportedOperationException("Not yet implemented");
+        return 1;
     }
     
 }
