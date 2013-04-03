@@ -21,5 +21,8 @@ public class InMemoryExpenseRepository implements ExpenseRepository{
     public void save(Expense expense) {
         expenses.add(expense);
     }
+     public List<Expense> getListExpenses(){
+         return expenses;
+     }
     
 }
