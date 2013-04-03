@@ -30,10 +30,12 @@ public class BootstrapExpenses
         Expense e2 = new Expense(amount,"Medical Expenses");
         
         amount = new BigDecimal("0.50");
-        Expense e3 = new Expense(amount,"Bubblegum");    
-     
+        Expense e3 = new Expense(amount,"Bubblegum");
+        amount = new BigDecimal("30");
+        Expense e4 = new Expense(amount,"Corn",2,3,2012); 
         repositorio.save(e1);
         repositorio.save(e2);
         repositorio.save(e3);
+        repositorio.save(e4);
     }
 }
