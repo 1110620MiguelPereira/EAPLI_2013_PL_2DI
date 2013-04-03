@@ -17,8 +17,14 @@ public abstract class PaymentMethodCard implements PaymentMethod{
     }
     
     public PaymentMethodCard(String number, String bankName){ 
-        this.number = number; this.bankName=bankName;
-    }
-    
-    
+           
+        if(number == null ||  number.trim().length()<=0)
+            throw new IllegalArgumentException("Invalid Number.");
+        
+       if(bankName == null || bankName.trim().length() <= 0)
+            throw new IllegalArgumentException("Invalid Bank name.");
+           
+       this.number = number;
+       this.bankName=bankName;  
+    }   
 }
