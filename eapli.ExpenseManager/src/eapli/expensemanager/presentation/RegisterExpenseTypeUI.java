@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager.presentation;
 
+import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.controllers.RegisterExpenseTypeController;
 import eapli.util.Console;
 
@@ -21,6 +22,11 @@ class RegisterExpenseTypeUI extends BaseUI{
         controllerType.registerExpenseType(type, description);
         
         System.out.println("OK");
+    }
+
+    @Override
+    protected BaseController getController() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }

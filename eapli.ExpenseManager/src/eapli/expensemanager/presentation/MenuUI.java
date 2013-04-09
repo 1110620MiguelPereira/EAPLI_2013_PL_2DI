@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager.presentation;
 
+import eapli.expensemanager.controllers.BaseController;
 import eapli.util.Console;
 
 /**
@@ -12,9 +13,7 @@ import eapli.util.Console;
  */
 public class MenuUI extends BaseUI{
 
-    public void show() {
-        
- 
+    public void show() { 
         int option;
         do {
             
@@ -43,6 +42,11 @@ public class MenuUI extends BaseUI{
                     break;
             }
         } while (option != 0);
+    }
+
+    @Override
+    protected BaseController getController() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }
