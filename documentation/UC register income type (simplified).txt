@@ -1,0 +1,23 @@
+title register income type simplifier
+
+
+
+User -> +MenuUI: Choose option "register type of income"
+
+
+
+
+MenuUI -> +RegisterIncomeTypeUI: create
+RegisterIncomeTypeUI --> -MenuUI:
+
+RegisterIncomeTypeUI -> RegisterIncomeTypeController: create
+
+User -> RegisterIncomeTypeUI: enter type
+User -> RegisterIncomeTypeUI: enter description
+User -> +RegisterIncomeTypeUI: register type of income
+
+RegisterIncomeTypeUI -> +RegisterIncomeTypeController: create type of income(type, descrip)
+
+RegisterIncomeTypeController -> inctyp IncomeType: create(type,descrip)
+
+RegisterIncomeTypeController -> IncomeTypeRepository: save(inctyp)
