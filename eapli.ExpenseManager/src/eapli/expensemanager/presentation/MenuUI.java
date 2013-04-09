@@ -25,6 +25,7 @@ public class MenuUI extends BaseUI{
             System.out.println("3. Register payment method");
             System.out.println("4. List monthly expenses");
             System.out.println("5. List expenses types");
+            System.out.println("6. Register income type");
             System.out.println("0. Exit");
 
             option = Console.readIntegerFromConsole("Introduza uma opção:");
@@ -50,6 +51,10 @@ public class MenuUI extends BaseUI{
                 case 5:
                     ListExpenseTypeUI letUI = new ListExpenseTypeUI();
                     letUI.show();
+                    break;
+                  case 6:
+                    RegisterIncomeTypeUI incTypeUI = new RegisterIncomeTypeUI();
+                    incTypeUI.show();
                     break;
             }
         } while (option != 0);

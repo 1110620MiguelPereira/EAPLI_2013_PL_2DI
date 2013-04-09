@@ -9,18 +9,16 @@ import eapli.util.Console;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author Adulcinio
  */
-class RegisterExpenseTypeUI extends BaseUI{
+class RegisterExpenseTypeUI extends BaseRegisterTypesUI   {
 
     void show() {
-        String type = Console.readLineFromConsole("Type:");
-        String description = Console.readLineFromConsole("Description:");
         
+        super.show();
         RegisterExpenseTypeController controllerType = new RegisterExpenseTypeController();
-        controllerType.registerExpenseType(type, description);
+        controllerType.registerExpenseType(super.type,super.description);
         
-        System.out.println("OK");
-    }
-    
+        System.out.println("OK!");
+    } 
 }
