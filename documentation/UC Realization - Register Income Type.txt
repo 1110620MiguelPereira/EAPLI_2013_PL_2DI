@@ -1,0 +1,11 @@
+title Register Income Type
+
+User->+RegisterIncomeTypeUI:choose option "register Debit Card"
+RegisterIncomeTypeUI --> 
+RegisterIncomeTypeUI -> RegisterIncomeTypeController: create
+User ->RegisterIncomeTypeUI : enter type
+User -> RegisterIncomeTypeUI : enter description
+User ->RegisterIncomeTypeUI : register Income Type
+RegisterIncomeTypeUI -> +RegisterIncomeTypeController: register incomeType(type,description)
+RegisterIncomeTypeController-> incType RegisterIncomeType : create(type,description)
+RegisterIncomeTypeController-> RegisterIncomeTypeRepository: save(incType)
