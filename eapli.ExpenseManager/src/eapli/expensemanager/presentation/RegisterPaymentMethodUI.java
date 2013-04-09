@@ -14,7 +14,8 @@ import eapli.util.Console;
 public class RegisterPaymentMethodUI extends BaseUI {
 
 
-    void show() {
+    @Override
+    public void show() {
 
 
         int option;

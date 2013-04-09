@@ -16,7 +16,9 @@ import java.math.BigDecimal;
 class RegisterExpenseUI extends BaseUI{
     RegisterExpenseController controller = new RegisterExpenseController();
     
-    void show() {
+    @Override
+    public void show() {
+        super.show();
         BigDecimal amount = Console.readBigDecimal("Amount:");
         String description = Console.readLineFromConsole("Description:"); 
         controller.registerExpense(amount, description);

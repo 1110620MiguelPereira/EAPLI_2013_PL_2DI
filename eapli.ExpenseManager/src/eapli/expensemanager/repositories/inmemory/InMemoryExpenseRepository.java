@@ -28,12 +28,16 @@ public class InMemoryExpenseRepository implements ExpenseRepository{
     public BigDecimal ExpensesOfWeek(int weekNumber, int year) {
         BigDecimal sum = new BigDecimal(0.00);
         for(Expense e: expenses){
-            //FIX add atribute date of type Calendar in class Expense
-            /*if(year == e.getDate().Year && weekNumber == DateTime.weekNumber(e.getDate())){
-                sum += e.getAmount();
-            }*/
+            if(e.occursAt(year, weekNumber)){
+                sum = sum.add(e.getAmount());
+            }
         }
         return sum;
+    }
+    
+    @Override
+    public List<Expense> getListExpenses(){
+        return expenses;
     }
     
 }

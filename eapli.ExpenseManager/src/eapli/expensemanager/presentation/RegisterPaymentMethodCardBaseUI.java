@@ -16,6 +16,7 @@ public class RegisterPaymentMethodCardBaseUI extends BaseUI {
     String bankname;
     String cardnumber;
     
+    @Override
     public void show()
     {
         bankname = Console.readLineFromConsole("Nome do banco: ");

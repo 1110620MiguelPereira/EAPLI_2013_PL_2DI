@@ -9,6 +9,6 @@ package eapli.expensemanager.model;
  * @author schmitzoide
  */
 public interface PaymentMethod {
-    
+    //FIX: será que é mesmo preciso isto?
     public static enum types { CREDITCARD, DEBITCARD, CASH, CHECK };
 }

@@ -13,6 +13,10 @@ import java.math.BigDecimal;
  */
 public abstract class BaseUI {
     
+    public void show(){
+        showStatus();
+    }
+    
     protected void showStatus(){                
         BigDecimal expensesWeek = this.getController().ExpensesOfWeek();
         System.out.println("Gasto semanal: "+expensesWeek);

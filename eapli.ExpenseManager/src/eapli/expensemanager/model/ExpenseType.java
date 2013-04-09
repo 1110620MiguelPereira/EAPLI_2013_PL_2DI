@@ -23,5 +23,9 @@ public class ExpenseType {
         this.type = type;
         this.description = description;
     }
+    @Override
+     public String toString(){  
+        return "\nType: " + type + "\nDescription: " + description;  
+    }
     
 }

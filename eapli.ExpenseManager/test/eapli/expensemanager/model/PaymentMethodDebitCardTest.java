@@ -6,8 +6,9 @@ package eapli.expensemanager.model;
 
 /**
  *
- * @author schmitzoide
+ * @author Adulcínio
  */
-public class PaymentMethodCash implements PaymentMethod {
+public class PaymentMethodDebitCardTest {
     
+    PaymentMethodDebitCard debitTest = new PaymentMethodDebitCard(); 
 }
