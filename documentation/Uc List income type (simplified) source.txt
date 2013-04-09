@@ -1,0 +1,21 @@
+title List income type simplified
+
+
+
+User -> +MenuUI: Choose option "List type of income"
+
+
+
+
+MenuUI -> +ListIncomeTypeUI: create
+ListIncomeTypeUI --> -MenuUI:
+
+ListIncomeTypeUI -> ListIncomeTypeController: create
+
+
+ListIncomeTypeUI -> +ListIncomeTypeController: List
+
+
+ListIncomeTypeController -> +IncomeTypeRepository: List
+IncomeTypeRepository--> -ListIncomeTypeController:
+ListIncomeTypeController --> -ListIncomeTypeUI:
