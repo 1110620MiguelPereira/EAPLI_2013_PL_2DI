@@ -1,0 +1,5 @@
+title Register Income Type (simplified)
+
+User -> System: enter type
+User -> System: enter description
+User -> System: register Income Type
