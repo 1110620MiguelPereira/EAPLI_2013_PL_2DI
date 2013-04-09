@@ -12,6 +12,7 @@ import eapli.expensemanager.controllers.RegisterPaymentMethodController;
  */
 public class RegisterPaymentMethodDebitCardUI extends RegisterPaymentMethodCardBaseUI{
     
+    @Override
     public void show()
     {
         super.show();

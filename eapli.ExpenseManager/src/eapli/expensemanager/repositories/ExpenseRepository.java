@@ -5,6 +5,8 @@
 package eapli.expensemanager.repositories;
 
 import eapli.expensemanager.model.Expense;
+import eapli.util.DateTime;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -13,5 +15,6 @@ import java.util.List;
  */
 public interface ExpenseRepository {
     public void save(Expense expense);
+    public BigDecimal ExpensesOfWeek(int weekNumber, int year);
     public List<Expense> getListExpenses();
 }

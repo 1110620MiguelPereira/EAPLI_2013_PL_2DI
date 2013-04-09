@@ -5,18 +5,23 @@
 package eapli.expensemanager.presentation;
 
 import eapli.expensemanager.controllers.BaseController;
+import java.math.BigDecimal;
 
 /**
  *
  * @author António
  */
-public class BaseUI {
+public abstract class BaseUI {
     
-    void show(){        
-        BaseController controller = new BaseController();
-        
-        int expensesWeek = controller.ExpensesOfWeek();
+    public void show(){
+        showStatus();
+    }
+    
+    protected void showStatus(){                
+        BigDecimal expensesWeek = this.getController().ExpensesOfWeek();
         System.out.println("Gasto semanal: "+expensesWeek);
         System.out.println("Gasto mensal: ");
     }
+    
+    abstract protected BaseController getController();
 }

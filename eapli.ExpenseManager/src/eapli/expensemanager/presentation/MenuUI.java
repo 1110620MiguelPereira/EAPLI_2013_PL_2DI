@@ -4,20 +4,18 @@
  */
 package eapli.expensemanager.presentation;
 
+import eapli.expensemanager.controllers.BaseController;
 import eapli.util.Console;
 
 /**
  *
  * @author Paulo Gandra Sousa
  */
-public class MenuUI extends BaseUI{
+public class MenuUI{
 
-    public void show() {
-        
- 
+    public void show() { 
         int option;
         do {
-            
        
             System.out.println("EXPENSE MANAGER");
             System.out.println("1. Register expense");
@@ -27,6 +25,7 @@ public class MenuUI extends BaseUI{
             System.out.println("5. List expenses types");
             System.out.println("6. Register income type");
             System.out.println("0. Exit");
+            
 
             option = Console.readIntegerFromConsole("Introduza uma opção:");
             switch (option) {
@@ -59,5 +58,4 @@ public class MenuUI extends BaseUI{
             }
         } while (option != 0);
     }
-    
 }
