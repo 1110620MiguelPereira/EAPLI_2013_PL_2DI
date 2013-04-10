@@ -4,15 +4,18 @@
  */
 package eapli.expensemanager.controllers;
 
+import eapli.expensemanager.repositories.RepositoryFactory;
+import eapli.util.DateTime;
+import java.math.BigDecimal;
+
 /**
  *
  * @author António
  */
 public class BaseController {
 
-    public int ExpensesOfWeek() {
-        //throw new UnsupportedOperationException("Not yet implemented");
-        return 1;
+    public BigDecimal ExpensesOfWeek() { 
+        return RepositoryFactory.instance().getExpenseRepository().ExpensesOfWeek(DateTime.currentWeekNumber(), DateTime.currentYear());
     }
     
 }

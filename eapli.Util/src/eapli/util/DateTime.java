@@ -67,9 +67,15 @@ public class DateTime {
     public static int currentMonth() {
         return today().get(Calendar.MONTH) + 1 ;
     }
-
+    
+    /**
+     * returns a Calendar Date
+     * receive mont (1-12) of the year
+     * 
+     * @return Calendar Date
+     */
     public static Calendar newCalendarDate(int year, int month, int day) {
-        Calendar date = new GregorianCalendar(year, month, day);
+        Calendar date = new GregorianCalendar(year, month-1, day);
         return date;
     }
 

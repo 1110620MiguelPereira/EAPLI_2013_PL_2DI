@@ -7,7 +7,6 @@ package eapli.expensemanager.controllers;
 import eapli.expensemanager.model.Expense;
 import eapli.expensemanager.repositories.ExpenseRepository;
 import eapli.expensemanager.repositories.RepositoryFactory;
-import eapli.expensemanager.repositories.inmemory.InMemoryExpenseRepository;
 import java.math.BigDecimal;
 
 /**

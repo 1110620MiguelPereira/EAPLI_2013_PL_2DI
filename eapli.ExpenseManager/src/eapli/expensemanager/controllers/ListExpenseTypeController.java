@@ -6,6 +6,7 @@ package eapli.expensemanager.controllers;
 
 import eapli.expensemanager.model.ExpenseType;
 import eapli.expensemanager.repositories.ExpenseTypeRepository;
+import eapli.expensemanager.repositories.RepositoryFactory;
 import eapli.expensemanager.repositories.inmemory.InMemoryExpenseTypeRepository;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
 public class ListExpenseTypeController extends BaseController{
 
     public List<ExpenseType>  getExpenseTypes() {
-        ExpenseTypeRepository etr = new InMemoryExpenseTypeRepository();
+        ExpenseTypeRepository etr = RepositoryFactory.instance().getExpenseTypeRepository();
         return etr.getAll();
     }
     

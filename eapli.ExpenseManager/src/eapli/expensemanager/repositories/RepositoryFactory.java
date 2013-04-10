@@ -6,6 +6,7 @@ package eapli.expensemanager.repositories;
 
 import eapli.expensemanager.repositories.inmemory.InMemoryExpenseRepository;
 import eapli.expensemanager.repositories.inmemory.InMemoryExpenseTypeRepository;
+import eapli.expensemanager.repositories.inmemory.InMemoryIncomeTypeRepository;
 import eapli.expensemanager.repositories.inmemory.InMemoryPaymentMethodRepository;
 
 /**
@@ -32,5 +33,9 @@ public class RepositoryFactory {
     
     public PaymentMethodRepository getPaymentMethodRepository() {
         return new InMemoryPaymentMethodRepository();
+    }
+   
+     public IncomeTypeRepository getIncomeTypeRepository() {
+        return new InMemoryIncomeTypeRepository();
     }
 }

@@ -40,6 +40,7 @@ public class Expense {
         this.description = description;
         this.date=DateTime.newCalendarDate(year, mounth, day);
     }
+
     public BigDecimal getAmount(){
         return amount;
     }
@@ -55,5 +56,9 @@ public class Expense {
     }
     public String toString(){
         return "Amount: "+amount+"\nDate: "+date.get(Calendar.DAY_OF_MONTH)+"/"+date.get(Calendar.MONTH)+"/"+date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";
+    }
+    
+    public boolean occursAt(int year, int weekNumber) {
+        return date.get(Calendar.YEAR)==year && date.get(Calendar.WEEK_OF_YEAR)==weekNumber;
     }
 }

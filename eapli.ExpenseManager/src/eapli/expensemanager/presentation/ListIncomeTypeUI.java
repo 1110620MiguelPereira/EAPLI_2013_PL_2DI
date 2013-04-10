@@ -5,24 +5,24 @@
 package eapli.expensemanager.presentation;
 
 import eapli.expensemanager.controllers.BaseController;
-import eapli.expensemanager.controllers.ListExpenseTypeController;
+import eapli.expensemanager.controllers.ListIncomeTypeController;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author Pedro Branco
  */
-class ListExpenseTypeUI extends BaseUI{
+public class ListIncomeTypeUI extends BaseUI{
 
     @Override
     public void show() {
-        ListExpenseTypeController listControllerType = new ListExpenseTypeController();
+        ListIncomeTypeController listControllerType = new ListIncomeTypeController();
        
-        for (int i = 0; i < listControllerType.getExpenseTypes().size(); i++) {
-            System.out.println(listControllerType.getExpenseTypes().get(i));
+        for (int i = 0; i < listControllerType.getIncomeTypes().size(); i++) {
+            System.out.println(listControllerType.getIncomeTypes().get(i));
         }
         System.out.println("OK");
     }
-
+    
     @Override
     protected BaseController getController() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

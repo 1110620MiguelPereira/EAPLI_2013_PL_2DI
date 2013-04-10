@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager.presentation;
 
+import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.controllers.ExpenseVisualizationController;
 import eapli.expensemanager.model.Expense;
 import eapli.util.Console;
@@ -14,22 +15,28 @@ import java.util.List;
  *
  * @author Big-D2xl
  */
-public class ExpenseVisualizationUI extends BaseUI{
-       public void show(){
-         super.show();
+public class ExpenseVisualizationUI extends BaseUI {
+
+    
+    public void show() {
         int month = Console.readIntegerFromConsole("Month");
         int year = Console.readIntegerFromConsole("Year");
-        if(month>0 && month<13 && year<=DateTime.currentYear()){
+        if (month > 0 && month < 13 && year <= DateTime.currentYear()) {
             ExpenseVisualizationController EVC = new ExpenseVisualizationController();
-            List<Expense> expenses = EVC.ExpenseVisualization(month,year);
+            List<Expense> expenses = EVC.ExpenseVisualization(month, year);
             System.out.println("List Expenses:\n");
             for (Expense a : expenses) {
                 System.out.println("" + a.toString());
                 //a.toString();
             }
-        }else{
-           System.out.println("Invalid Date");
+        } else {
+            System.out.println("Invalid Date");
+
         }
-        
+    }
+
+    @Override
+    protected BaseController getController() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
