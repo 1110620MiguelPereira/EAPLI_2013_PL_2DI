@@ -54,7 +54,7 @@ public class ExpenseTest {
         types tCash=types.CASH;
         Expense instance = new Expense(new BigDecimal("123"),"Corn",2,3,2012,tCash);
         boolean expResult = true;
-        boolean result = instance.occursATMonth(month, year);
+        boolean result = instance.occursAtMonth(month, year);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         
