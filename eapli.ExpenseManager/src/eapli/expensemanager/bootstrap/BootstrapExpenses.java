@@ -7,6 +7,7 @@ package eapli.expensemanager.bootstrap;
 
 import java.math.BigDecimal;
 import eapli.expensemanager.model.Expense;
+import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.expensemanager.repositories.ExpenseRepository;
 import eapli.expensemanager.repositories.RepositoryFactory;
 //import eapli.expensemanager.repositories.inmemory.InMemoryExpenseRepository;
@@ -32,17 +33,22 @@ public class BootstrapExpenses
 //        amount = new BigDecimal("0.50");
 //        Expense e3 = new Expense(amount,"Bubblegum");
         
+        types tCash = types.CASH;
+        types tCC = types.CREDITCARD;
+        types tCheck = types.CHECK;
+        types tDC = types.DEBITCARD;
+        
         BigDecimal amount = new BigDecimal("30");
-        Expense e1 = new Expense(amount,"Corn",2,3,2012); 
+        Expense e1 = new Expense(amount,"Corn",2,3,2012,tCash); 
         
         amount = new BigDecimal("600");
-        Expense e2 = new Expense(amount,"Computer",8,4,2013); 
+        Expense e2 = new Expense(amount,"Computer",8,4,2013,tCC); 
         
         amount = new BigDecimal("15");
-        Expense e3 = new Expense(amount,"Mouse",9,4,2013); 
+        Expense e3 = new Expense(amount,"Mouse",9,4,2013,tDC); 
         
         amount = new BigDecimal("20.99");
-        Expense e4 = new Expense(amount,"Keybord",2,3,2013); 
+        Expense e4 = new Expense(amount,"Keybord",2,3,2013,tCheck); 
         
         repositorio.save(e1);
         repositorio.save(e2);
