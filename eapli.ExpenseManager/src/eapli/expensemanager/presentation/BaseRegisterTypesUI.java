@@ -18,7 +18,8 @@ public abstract class BaseRegisterTypesUI extends BaseUI   {
      String type;
      String description;
     
-    void  show() {
+    @Override
+    public void  show() {
         type = Console.readLineFromConsole("Type:");
         description = Console.readLineFromConsole("Description:");
     }
