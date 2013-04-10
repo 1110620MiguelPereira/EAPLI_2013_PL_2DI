@@ -6,6 +6,7 @@ package eapli.expensemanager.model;
  */
 
 import eapli.expensemanager.model.Expense;
+import eapli.expensemanager.model.PaymentMethod.types;
 import java.math.BigDecimal;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,7 +51,8 @@ public class ExpenseTest {
         System.out.println("occursAtMonth");
         int month = 3;
         int year = 2012;
-        Expense instance = new Expense(new BigDecimal("123"),"Corn",2,3,2012);
+        types tCash=types.CASH;
+        Expense instance = new Expense(new BigDecimal("123"),"Corn",2,3,2012,tCash);
         boolean expResult = true;
         boolean result = instance.occursATMonth(month, year);
         assertEquals(expResult, result);
