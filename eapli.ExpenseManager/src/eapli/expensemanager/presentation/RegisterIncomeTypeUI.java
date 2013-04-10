@@ -4,21 +4,27 @@
  */
 package eapli.expensemanager.presentation;
 
+import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.controllers.RegisterIncomeTypeController;
-import eapli.util.Console;
 
 /**
  *
  * @author Adulcinio
  */
 class RegisterIncomeTypeUI extends BaseRegisterTypesUI   {
-
-    void show() {
+RegisterIncomeTypeController controllerType = new RegisterIncomeTypeController();
+    @Override
+    public void show() {
         
        super.show();
-        RegisterIncomeTypeController controllerType = new RegisterIncomeTypeController();
+        
        controllerType.registerIncomeType(super.type,super.description);
         
         System.out.println("OK!");
-    } 
+    }
+
+    @Override
+    protected BaseController getController() {
+        return controllerType;
+    }
 }
