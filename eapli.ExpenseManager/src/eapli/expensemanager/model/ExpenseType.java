@@ -26,6 +26,8 @@ public class ExpenseType {
     @Override
      public String toString(){  
         return "\nType: " + type + "\nDescription: " + description;  
-    }
-    
+    } 
+     public String toString2(){  
+        return type;  
+    }  
 }

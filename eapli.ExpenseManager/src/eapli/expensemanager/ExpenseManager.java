@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager;
 
+import eapli.expensemanager.bootstrap.BootstrapExpenseType;
 import eapli.expensemanager.bootstrap.BootstrapExpenses;
 import eapli.expensemanager.presentation.MenuUI;
 
@@ -20,6 +21,9 @@ public class ExpenseManager {
         
         BootstrapExpenses expenseTest = new BootstrapExpenses();
         expenseTest.createExpenses();
+        
+         BootstrapExpenseType expenseType = new BootstrapExpenseType();
+        expenseType.createExpenseType();
         
         MenuUI menu = new MenuUI();
         menu.show();
