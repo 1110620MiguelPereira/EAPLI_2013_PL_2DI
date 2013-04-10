@@ -24,6 +24,7 @@ public class MenuUI{
             System.out.println("4. List monthly expenses");
             System.out.println("5. List expenses types");
             System.out.println("6. Register income type");
+            System.out.println("7. List income types");
             System.out.println("0. Exit");
             
 
@@ -55,6 +56,10 @@ public class MenuUI{
                     RegisterIncomeTypeUI incTypeUI = new RegisterIncomeTypeUI();
                     incTypeUI.show();
                     break;
+                  case 7:
+                    ListIncomeTypeUI listIncUI = new ListIncomeTypeUI();
+                      listIncUI.show();
+                      break;
             }
         } while (option != 0);
     }
