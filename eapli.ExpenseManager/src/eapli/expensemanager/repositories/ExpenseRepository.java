@@ -13,5 +13,5 @@ import java.util.List;
  */
 public interface ExpenseRepository {
     public void save(Expense expense);
-    public List<Expense> getListExpenses();
+    public List<Expense> getListExpenses(int month,int year);
 }

@@ -21,8 +21,14 @@ public class InMemoryExpenseRepository implements ExpenseRepository{
     public void save(Expense expense) {
         expenses.add(expense);
     }
-     public List<Expense> getListExpenses(){
-         return expenses;
+     public List<Expense> getListExpenses(int month,int year){
+         
+         List<Expense> listExpenseMonth=new ArrayList<Expense>();
+         for(Expense e:expenses){
+            if(e.occursATMonth(month, year))
+                listExpenseMonth.add(e);
+               }
+         return listExpenseMonth;
      }
     
 }

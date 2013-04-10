@@ -17,7 +17,7 @@ public class Expense {
 
     private BigDecimal amount;
     private String description;
-    private Date date;
+    private Calendar date;
     
     public Expense(BigDecimal amount, String description) {
         if (description == null || amount == null ||
@@ -38,15 +38,22 @@ public class Expense {
         
         this.amount = amount;
         this.description = description;
-        this.date=DateTime.newDate(year, mounth, day);
-    }
-    public Date getDate(){
-        return date;
+        this.date=DateTime.newCalendarDate(year, mounth, day);
     }
     public BigDecimal getAmount(){
         return amount;
     }
+    public boolean occursATMonth(int month, int year) {
+        if (date != null) {
+            int yeard = date.get(Calendar.YEAR);
+            int monthd = date.get(Calendar.MONTH);
+            if (month == monthd && year == yeard) {
+                return true;
+            }
+        }
+        return false;
+    }
     public String toString(){
-        return "Amount: "+amount+"\nDate: "+date+"\nDescription: "+description+"\n";
+        return "Amount: "+amount+"\nDate: "+date.get(Calendar.DAY_OF_MONTH)+"/"+date.get(Calendar.MONTH)+"/"+date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";
     }
 }
