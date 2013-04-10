@@ -1,0 +1,6 @@
+title Register Income (simplefied)
+
+User->System: choose option "register income"
+User->System:enter amount
+User->System:enter description
+User->System:enter date
