@@ -51,4 +51,7 @@ public class Expense {
     public boolean occursAt(int year, int weekNumber) {
         return date.get(Calendar.YEAR)==year && date.get(Calendar.WEEK_OF_YEAR)==weekNumber;
     }
+    public boolean occursAtMonthYear(int month, int year) {
+        return date.get(Calendar.YEAR)==year && date.get(Calendar.MONTH)==month;
+    }
 }
