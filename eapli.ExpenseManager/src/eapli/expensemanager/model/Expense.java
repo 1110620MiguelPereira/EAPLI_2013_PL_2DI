@@ -47,7 +47,7 @@ public class Expense {
     public boolean occursATMonth(int month, int year) {
         if (date != null) {
             int yeard = date.get(Calendar.YEAR);
-            int monthd = date.get(Calendar.MONTH);
+            int monthd = date.get(Calendar.MONTH)+1;
             if (month == monthd && year == yeard) {
                 return true;
             }
@@ -55,7 +55,7 @@ public class Expense {
         return false;
     }
     public String toString(){
-        return "Amount: "+amount+"\nDate: "+date.get(Calendar.DAY_OF_MONTH)+"/"+date.get(Calendar.MONTH)+"/"+date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";
+        return "Amount: "+amount+"\nDate: "+date.get(Calendar.DAY_OF_MONTH)+"/"+(date.get(Calendar.MONTH)+1)+"/"+date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";
     }
     
     public boolean occursAt(int year, int weekNumber) {

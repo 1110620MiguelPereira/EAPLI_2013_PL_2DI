@@ -19,6 +19,7 @@ public class ExpenseVisualizationUI extends BaseUI {
 
     
     public void show() {
+        super.show();
         int month = Console.readIntegerFromConsole("Month");
         int year = Console.readIntegerFromConsole("Year");
         if (month > 0 && month < 13 && year <= DateTime.currentYear()) {
@@ -37,6 +38,6 @@ public class ExpenseVisualizationUI extends BaseUI {
 
     @Override
     protected BaseController getController() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return new BaseController();
     }
 }
