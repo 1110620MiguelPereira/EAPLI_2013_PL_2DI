@@ -17,5 +17,7 @@ public class BaseController {
     public BigDecimal ExpensesOfWeek() { 
         return RepositoryFactory.instance().getExpenseRepository().ExpensesOfWeek(DateTime.currentWeekNumber(), DateTime.currentYear());
     }
-    
+    public BigDecimal expensesOfThisMonth() {
+        return RepositoryFactory.instance().getExpenseRepository().expensesOfMonth(DateTime.currentMonth(), DateTime.currentYear());
+    }
 }

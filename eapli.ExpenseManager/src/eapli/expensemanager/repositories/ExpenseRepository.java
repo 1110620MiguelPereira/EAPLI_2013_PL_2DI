@@ -16,5 +16,6 @@ import java.util.List;
 public interface ExpenseRepository {
     public void save(Expense expense);
     public BigDecimal ExpensesOfWeek(int weekNumber, int year);
-    public List<Expense> getListExpenses();
+    public BigDecimal expensesOfMonth(int month, int year);
+    public List<Expense> getListExpenses(int month, int year);
 }

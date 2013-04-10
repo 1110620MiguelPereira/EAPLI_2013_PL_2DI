@@ -19,8 +19,9 @@ public abstract class BaseUI {
     
     protected void showStatus(){                
         BigDecimal expensesWeek = this.getController().ExpensesOfWeek();
+        BigDecimal expensesMonth = this.getController().expensesOfThisMonth();
         System.out.println("Gasto semanal: "+expensesWeek);
-        System.out.println("Gasto mensal: ");
+        System.out.println("Gasto mensal: "+expensesMonth);
     }
     
     abstract protected BaseController getController();
