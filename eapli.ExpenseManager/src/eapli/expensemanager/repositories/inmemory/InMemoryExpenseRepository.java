@@ -38,7 +38,7 @@ public class InMemoryExpenseRepository implements ExpenseRepository{
     public BigDecimal expensesOfMonth(int month, int year) {
         BigDecimal sum = new BigDecimal(0.00);
         for (Expense e : expenses) {
-            if (e.occursAtMonthYear(month, year)) {
+            if (e.occursAtMonth(month, year)) {
                 sum = sum.add(e.getAmount());
             }
         }
@@ -46,7 +46,7 @@ public class InMemoryExpenseRepository implements ExpenseRepository{
     }
     
     @Override
-    public List<Expense> getListExpenses(){
+    public List<Expense> getListExpenses(int month, int year){
         return expenses;
     }
     

@@ -43,14 +43,15 @@ public class Expense {
     public BigDecimal getAmount(){
         return amount;
     }
+   
     public String toString(){
-        return "Amount: "+amount+"\nDate: "+date+"\nDescription: "+description+"\n";
+        return "Amount: "+amount+"\nDate: "+date.get(Calendar.DAY_OF_MONTH)+"/"+(date.get(Calendar.MONTH)+1)+"/"+date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";
     }
     
     public boolean occursAt(int year, int weekNumber) {
         return date.get(Calendar.YEAR)==year && date.get(Calendar.WEEK_OF_YEAR)==weekNumber;
     }
-    public boolean occursAtMonthYear(int month, int year) {
+    public boolean occursAtMonth(int month, int year) {
         return date.get(Calendar.YEAR)==year && date.get(Calendar.MONTH)+1==month;         
     }
 }
