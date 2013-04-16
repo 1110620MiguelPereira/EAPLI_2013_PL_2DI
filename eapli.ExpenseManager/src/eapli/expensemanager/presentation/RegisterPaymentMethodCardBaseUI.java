@@ -11,7 +11,7 @@ import eapli.util.Console;
  *
  * @author Pedro
  */
-public class RegisterPaymentMethodCardBaseUI extends BaseUI {
+public abstract class RegisterPaymentMethodCardBaseUI extends BaseUI {
     
     String bankname;
     String cardnumber;
@@ -23,8 +23,4 @@ public class RegisterPaymentMethodCardBaseUI extends BaseUI {
         cardnumber = Console.readLineFromConsole("Numero do cartao: ");
     }
 
-    @Override
-    protected BaseController getController() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-}
+ }

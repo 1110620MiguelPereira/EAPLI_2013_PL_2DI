@@ -19,7 +19,7 @@ public class InMemoryExpenseTypeRepository implements ExpenseTypeRepository{
        /**
      * @return the expensesType
      */
-    public static List<ExpenseType> getExpensesType() {
+    public List<ExpenseType> getExpensesType() {
         return expensesType;
     }
      /**

@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager.controllers;
 
+import eapli.expensemanager.model.PaymentMethodCard;
 import eapli.expensemanager.model.PaymentMethodCreditCard;
 import eapli.expensemanager.model.PaymentMethodDebitCard;
 import eapli.expensemanager.repositories.PaymentMethodRepository;
@@ -19,9 +20,7 @@ public class RegisterPaymentMethodController extends BaseController{
         
        try {
          PaymentMethodDebitCard payMethodDebCard = new PaymentMethodDebitCard(cardNumber,bankName);
-         
-          PaymentMethodRepository repoPayMetDebit = RepositoryFactory.instance().getPaymentMethodRepository();
-          repoPayMetDebit.save(payMethodDebCard);
+            doSave(payMethodDebCard);
       } catch(IllegalArgumentException ile)  {
            System.out.println("Argumentos Inválidos: "+ile.getMessage());
        }   
@@ -30,11 +29,14 @@ public class RegisterPaymentMethodController extends BaseController{
         
        try {
          PaymentMethodCreditCard payMethodDebCard = new PaymentMethodCreditCard(cardNumber,bankName);
-       
-        PaymentMethodRepository repoPayMetCredit = RepositoryFactory.instance().getPaymentMethodRepository();
-        repoPayMetCredit.save(payMethodDebCard);
+            doSave(payMethodDebCard);
         } catch(IllegalArgumentException ile)  {
            System.out.println("Argumentos Inválidos: "+ile.getMessage());
        } 
+    }
+
+    private void doSave(PaymentMethodCard payMethodCard) {
+        PaymentMethodRepository repoPayMetCredit = RepositoryFactory.instance().getPaymentMethodRepository();
+        repoPayMetCredit.save(payMethodCard);
     }
 }

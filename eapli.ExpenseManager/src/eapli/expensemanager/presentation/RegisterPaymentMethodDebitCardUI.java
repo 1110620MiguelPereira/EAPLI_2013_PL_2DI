@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager.presentation;
 
+import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.controllers.RegisterPaymentMethodController;
 
 /**
@@ -11,13 +12,20 @@ import eapli.expensemanager.controllers.RegisterPaymentMethodController;
  * @author Adulcinio
  */
 public class RegisterPaymentMethodDebitCardUI extends RegisterPaymentMethodCardBaseUI{
+     
+    RegisterPaymentMethodController controllerDebitCard = new RegisterPaymentMethodController();
     
     @Override
     public void show()
     {
         super.show();
-        RegisterPaymentMethodController controllerDebitCard = new RegisterPaymentMethodController();
+       
         controllerDebitCard.registerPaymentMethodDebitCard(bankname, cardnumber);
+    }
+
+    @Override
+    protected BaseController getController() {
+        return controllerDebitCard;
     }
     
 }

@@ -24,7 +24,7 @@ public class ExpenseVisualizationUI extends BaseUI {
         int year = Console.readIntegerFromConsole("Year");
         if (month > 0 && month < 13 && year <= DateTime.currentYear()) {
             ExpenseVisualizationController EVC = new ExpenseVisualizationController();
-            List<Expense> expenses = EVC.ExpenseVisualization(month, year);
+            List<Expense> expenses = EVC.getExpensesOfMonth(month, year);
             System.out.println("List Expenses:\n");
             for (Expense a : expenses) {
                 System.out.println("" + a.toString());

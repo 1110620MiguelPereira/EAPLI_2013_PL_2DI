@@ -17,6 +17,7 @@ class ListExpenseTypeUI extends BaseUI{
     public void show() {
         ListExpenseTypeController listControllerType = new ListExpenseTypeController();
        
+        // TODO utilizar for-each
         for (int i = 0; i < listControllerType.getExpenseTypes().size(); i++) {
             System.out.println(listControllerType.getExpenseTypes().get(i));
         }

@@ -17,6 +17,8 @@ public class ListIncomeTypeUI extends BaseUI{
     public void show() {
         ListIncomeTypeController listControllerType = new ListIncomeTypeController();
        
+        // TODO usar for-each
+        // TODO ver cimo evitar duplicação com ListExpenseType
         for (int i = 0; i < listControllerType.getIncomeTypes().size(); i++) {
             System.out.println(listControllerType.getIncomeTypes().get(i));
         }

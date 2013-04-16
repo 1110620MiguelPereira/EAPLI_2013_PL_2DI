@@ -15,10 +15,10 @@ import java.util.List;
  */
 public class ExpenseVisualizationController extends BaseController{
 
-    public List<Expense> ExpenseVisualization(int month,int year) {
+    public List<Expense> getExpensesOfMonth(int month,int year) {
         
         ExpenseRepository repo= RepositoryFactory.instance().getExpenseRepository();
-         //To change body of generated methods, choose Tools | Templates.
+
         return repo.getListExpenses(month,year);
     }
     

@@ -10,6 +10,7 @@ import eapli.expensemanager.model.ExpenseType;
 import eapli.expensemanager.repositories.ExpenseRepository;
 import eapli.expensemanager.repositories.RepositoryFactory;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  *
@@ -20,9 +21,12 @@ public class RegisterExpenseController extends BaseController{
     public void registerExpense(BigDecimal amount, String description, int day,int month,int year, types paymentMethod, ExpenseType typeExpense) {
         Expense expense = new Expense(amount, description,day,month,year,paymentMethod,typeExpense);
         
-        // FIX provide alternative for creating the repository
         ExpenseRepository repo = RepositoryFactory.instance().getExpenseRepository();
         repo.save(expense);
+    }
+
+    public List<ExpenseType> getExpenseTypes() {
+        return RepositoryFactory.instance().getExpenseTypeRepository().getAll();
     }
     
 }

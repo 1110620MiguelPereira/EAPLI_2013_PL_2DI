@@ -14,8 +14,7 @@ public class RegisterIncomeTypeController extends BaseController{
 
     public void registerIncomeType(String type, String description) {
         IncomeType incType = new IncomeType(type, description);
-        
-         // FIX provide alternative for creating the repository  
+ 
         IncomeTypeRepository repo = RepositoryFactory.instance().getIncomeTypeRepository();
         repo.save(incType);
     }

@@ -23,7 +23,7 @@ public class RegisterPaymentMethodUI extends BaseUI {
             System.out.println("Choose a payment method type:");
             System.out.println("1. debit card");
             System.out.println("2. credit card");
-            System.out.println("3. cheque");
+            //System.out.println("3. cheque");
             System.out.println("0. Sair\n");
             option = Console.readIntegerFromConsole("Introduza uma opção:");
             switch (option) {

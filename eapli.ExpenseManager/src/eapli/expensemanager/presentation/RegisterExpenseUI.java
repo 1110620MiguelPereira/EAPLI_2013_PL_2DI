@@ -28,14 +28,17 @@ public class RegisterExpenseUI extends BaseUI {
         int day = Console.readIntegerFromConsole("Day:");
         int month = Console.readIntegerFromConsole("Month:");
         int year = Console.readIntegerFromConsole("Year:");
+        System.out.println("Payment methods");
         int menu = Console.readIntegerFromConsole("1 - Cash \n2 - Credit Card \n3 - Debit Card \n4 - Check");
         
-       List<ExpenseType> expensesType_Aux=InMemoryExpenseTypeRepository.getExpensesType();
+        // FIX do not call the repository, ask the controller
+       List<ExpenseType> expensesType_Aux=controller.getExpenseTypes();
         
         System.out.println("Lista de Tipos de Despesa:\n");
+        // TODO avoid duplicate code with ListExpensetypeUI
         System.out.println(expensesType_Aux.size());
         for(int i=0;i<expensesType_Aux.size();i++) {
-            System.out.println(i+1+" : "+expensesType_Aux.get(i).toString2());
+            System.out.println(i+1+" : "+expensesType_Aux.get(i).getType());
         }
         
         int optionType;
