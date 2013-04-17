@@ -30,23 +30,10 @@ public class RegisterExpenseUI extends BaseUI {
         System.out.println("Payment methods");
         int menu = Console.readIntegerFromConsole("1 - Cash \n2 - Credit Card \n3 - Debit Card \n4 - Check");
         
-        // FIX do not call the repository, ask the controller
-       List<ExpenseType> expensesType_Aux=controller.getExpenseTypes();
         
         System.out.println("Lista de Tipos de Despesa:\n");
-        // TODO avoid duplicate code with ListExpensetypeUI
-        System.out.println(expensesType_Aux.size());
-        for(int i=0;i<expensesType_Aux.size();i++) {
-            System.out.println(i+1+" : "+expensesType_Aux.get(i).getType());
-        }
-        
-        int optionType;
-        do {
-              optionType= Console.readIntegerFromConsole("Enter type number:"); 
-            
-        } while (!(optionType>0) && !(optionType<expensesType_Aux.size()+1));
-        
-        ExpenseType expType=expensesType_Aux.get(optionType-1);
+
+        ExpenseType expType = askForExpenseType();
                
         switch(menu){
             case 1:
@@ -65,6 +52,28 @@ public class RegisterExpenseUI extends BaseUI {
    // @Override
     protected BaseController getController() {
         return controller;
+    }
+    
+    private ExpenseType askForExpenseType() {
+    
+        // TODO avoid duplicate code with ListExpensetypeUI
+        List<ExpenseType> expensesType_Aux=controller.getExpenseTypes();
+        int expenseTypesCount = expensesType_Aux.size();
+    
+        boolean exit = false;
+        int option;
+        
+        do {
+            for(int i=0;i<expenseTypesCount;i++) {
+                System.out.println(i+1+" : "+expensesType_Aux.get(i).getType());
+            }
+            option = Console.readIntegerFromConsole("Enter type number:"); 
+            if(option-1<expenseTypesCount) exit=true;
+            if(!exit) System.out.println("Opção inválida");
+        } while (!exit) ;
+        
+        return expensesType_Aux.get(option-1);
+    
     }
     
 }
