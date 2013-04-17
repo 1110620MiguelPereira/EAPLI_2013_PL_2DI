@@ -22,5 +22,6 @@ public abstract class BaseRegisterTypesUI extends BaseUI   {
     public void  show() {
         type = Console.readLineFromConsole("Type:");
         description = Console.readLineFromConsole("Description:");
+        super.show();
     }
 }

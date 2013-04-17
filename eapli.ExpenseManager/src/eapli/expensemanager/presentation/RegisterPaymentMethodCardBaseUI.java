@@ -21,6 +21,7 @@ public abstract class RegisterPaymentMethodCardBaseUI extends BaseUI {
     {
         bankname = Console.readLineFromConsole("Nome do banco: ");
         cardnumber = Console.readLineFromConsole("Numero do cartao: ");
+        super.show();
     }
 
  }

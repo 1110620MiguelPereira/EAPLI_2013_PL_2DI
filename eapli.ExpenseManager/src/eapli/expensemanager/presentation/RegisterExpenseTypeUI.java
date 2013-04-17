@@ -16,12 +16,11 @@ class RegisterExpenseTypeUI extends BaseRegisterTypesUI   {
 
     @Override
     public void show() {
-        
-        super.show();
         RegisterExpenseTypeController controllerType = new RegisterExpenseTypeController();
         controllerType.registerExpenseType(super.type,super.description);
         
         System.out.println("OK!");
+        super.show();
     } 
 
     @Override

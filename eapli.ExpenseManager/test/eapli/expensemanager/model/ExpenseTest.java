@@ -52,7 +52,8 @@ public class ExpenseTest {
         int month = 3;
         int year = 2012;
         types tCash=types.CASH;
-        Expense instance = new Expense(new BigDecimal("123"),"Corn",2,3,2012,tCash);
+        Expense instance = null;
+        //Expense instance = new Expense(new BigDecimal("123"),"Corn",2,3,2012,tCash);
         boolean expResult = true;
         boolean result = instance.occursAtMonth(month, year);
         assertEquals(expResult, result);

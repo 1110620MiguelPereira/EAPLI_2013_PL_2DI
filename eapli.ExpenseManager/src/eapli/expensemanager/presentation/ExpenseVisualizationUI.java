@@ -19,7 +19,6 @@ public class ExpenseVisualizationUI extends BaseUI {
 
     
     public void show() {
-        super.show();
         int month = Console.readIntegerFromConsole("Month");
         int year = Console.readIntegerFromConsole("Year");
         if (month > 0 && month < 13 && year <= DateTime.currentYear()) {
@@ -34,6 +33,7 @@ public class ExpenseVisualizationUI extends BaseUI {
             System.out.println("Invalid Date");
 
         }
+        super.show();
     }
 
     @Override

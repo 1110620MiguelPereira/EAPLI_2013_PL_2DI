@@ -22,7 +22,6 @@ public class RegisterExpenseUI extends BaseUI {
     
   //  @Override
     public void show() {
-        super.show();
         BigDecimal amount = Console.readBigDecimal("Amount:");
         String description = Console.readLineFromConsole("Description:");
         int day = Console.readIntegerFromConsole("Day:");
@@ -60,7 +59,7 @@ public class RegisterExpenseUI extends BaseUI {
                 controller.registerExpense(amount, description, day,month,year, types.CHECK,expType); break;
         }        
         System.out.println("OK");
-        
+        super.show();
     }
 
    // @Override

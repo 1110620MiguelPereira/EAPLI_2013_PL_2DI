@@ -16,8 +16,6 @@ public class RegisterPaymentMethodUI extends BaseUI {
 
     @Override
     public void show() {
-
-
         int option;
         do {
             System.out.println("Choose a payment method type:");
@@ -41,6 +39,7 @@ public class RegisterPaymentMethodUI extends BaseUI {
                     break;
             }
         } while (option != 0);
+        super.show();
     }
 
     @Override
