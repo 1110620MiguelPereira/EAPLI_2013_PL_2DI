@@ -13,19 +13,17 @@ import eapli.util.Console;
  * @author Adulcinio
  */
 class RegisterExpenseTypeUI extends BaseRegisterTypesUI   {
-
+    RegisterExpenseTypeController controllerType = new RegisterExpenseTypeController();
     @Override
     public void show() {
-        RegisterExpenseTypeController controllerType = new RegisterExpenseTypeController();
-        controllerType.registerExpenseType(super.type,super.description);
-        
-        System.out.println("OK!");
         super.show();
+        controllerType.registerExpenseType(super.type,super.description);
+        System.out.println("OK!");        
     } 
 
     @Override
-    protected BaseController getController() {
-        throw new UnsupportedOperationException("Not supported yet.");
+     protected BaseController getController() {
+        return controllerType;
     }
-    
+        
 }
