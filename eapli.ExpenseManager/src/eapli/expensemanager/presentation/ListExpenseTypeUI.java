@@ -6,20 +6,20 @@ package eapli.expensemanager.presentation;
 
 import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.controllers.ListExpenseTypeController;
+import eapli.expensemanager.model.ExpenseType;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author Adulcinio
  */
 class ListExpenseTypeUI extends BaseUI{
-ListExpenseTypeController listControllerType = new ListExpenseTypeController();
+    ListExpenseTypeController listControllerType = new ListExpenseTypeController();
     @Override
     public void show() {       
-        // TODO utilizar for-each
-        for (int i = 0; i < listControllerType.getExpenseTypes().size(); i++) {
-            System.out.println(listControllerType.getExpenseTypes().get(i));
+        
+        for (ExpenseType obj: listControllerType.getExpenseTypes()){
+            System.out.println(obj);
         }
-        System.out.println("OK");
         super.show();
     }
 
