@@ -18,48 +18,66 @@ public class MenuUI{
         do {
        
             System.out.println("EXPENSE MANAGER");
-            System.out.println("1. Register expense");
-            System.out.println("2. Register expense type");
-            System.out.println("3. Register payment method");
-            System.out.println("4. List monthly expenses");
-            System.out.println("5. List expenses types");
-            System.out.println("6. Register income type");
-            System.out.println("7. List income types");
+            System.out.println("1. List");
+            System.out.println("2. Register");
             System.out.println("0. Exit");
             
-
-            option = Console.readIntegerFromConsole("Introduza uma opção:");
+            option = Console.readIntegerFromConsole("Insert option:");
             switch (option) {
                 case 0:
                     return;
-                case 1:
-                    RegisterExpenseUI ui = new RegisterExpenseUI();
-                    ui.show();
+                case 1://Listagens
+                    System.out.println("List:");
+                    System.out.println("1. Monthly expenses");
+                    System.out.println("2. Expense types");
+                    System.out.println("3. Income types");
+                    System.out.println("0. Exit");
+                    option = Console.readIntegerFromConsole("Insert option:");
+                    switch(option){
+                        case 0:
+                            return;
+                        case 1:
+                            ExpenseVisualizationUI tuii=new ExpenseVisualizationUI();
+                            tuii.show();
+                            break;
+                        case 2:
+                            ListExpenseTypeUI letUI = new ListExpenseTypeUI();
+                            letUI.show();
+                            break;
+                        case 3:
+                            ListIncomeTypeUI listIncUI = new ListIncomeTypeUI();
+                            listIncUI.show();
+                            break;
+                    }
                     break;
                 case 2:
-                    RegisterExpenseTypeUI tui = new RegisterExpenseTypeUI();
-                    tui.show();
-                    break;
-                case 3:
-                    RegisterPaymentMethodUI paymentMethodUI = new RegisterPaymentMethodUI();
-                    paymentMethodUI.show();
-                    break;
-                case 4:
-                    ExpenseVisualizationUI tuii=new ExpenseVisualizationUI();
-                    tuii.show();
-                    break;
-                case 5:
-                    ListExpenseTypeUI letUI = new ListExpenseTypeUI();
-                    letUI.show();
-                    break;
-                  case 6:
-                    RegisterIncomeTypeUI incTypeUI = new RegisterIncomeTypeUI();
-                    incTypeUI.show();
-                    break;
-                  case 7:
-                    ListIncomeTypeUI listIncUI = new ListIncomeTypeUI();
-                      listIncUI.show();
-                      break;
+                    System.out.println("Register:");
+                    System.out.println("1. Expense");
+                    System.out.println("2. Expense type");
+                    System.out.println("3. Payment method");
+                    System.out.println("4. Income type");
+                    System.out.println("0. Exit");
+                    option = Console.readIntegerFromConsole("Insert option:");
+                    switch(option){
+                        case 0:
+                            return;
+                        case 1:
+                            RegisterExpenseUI ui = new RegisterExpenseUI();
+                            ui.show();
+                            break;
+                        case 2:
+                            RegisterExpenseTypeUI tui = new RegisterExpenseTypeUI();
+                            tui.show();
+                            break;
+                        case 3:
+                            RegisterPaymentMethodUI paymentMethodUI = new RegisterPaymentMethodUI();
+                            paymentMethodUI.show();
+                            break;
+                        case 4:
+                            RegisterIncomeTypeUI incTypeUI = new RegisterIncomeTypeUI();
+                            incTypeUI.show();
+                            break;
+                    }     
             }
         } while (option != 0);
     }
