@@ -26,6 +26,5 @@ class ListExpenseTypeUI extends BaseUI{
     @Override
     protected BaseController getController() {
         return listControllerType;
-    }
-    
+    }   
 }

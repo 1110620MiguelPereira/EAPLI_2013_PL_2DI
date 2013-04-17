@@ -20,7 +20,7 @@ public class RegisterPaymentMethodController extends BaseController{
         
        try {
          PaymentMethodDebitCard payMethodDebCard = new PaymentMethodDebitCard(cardNumber,bankName);
-            doSave(payMethodDebCard);
+         doSave(payMethodDebCard);
       } catch(IllegalArgumentException ile)  {
            System.out.println("Argumentos Inválidos: "+ile.getMessage());
        }   

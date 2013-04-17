@@ -23,8 +23,7 @@ public class Expense {
     private types paymentMethod;
     private ExpenseType expenseType;
 
-    
-    public Expense(BigDecimal amount, String description, int day,int month,int year, types paymentMethod,ExpenseType expType) {
+     public Expense(BigDecimal amount, String description, int day,int month,int year, types paymentMethod,ExpenseType expType) {
         if (description == null || amount == null ||
                 description.trim().length() <= 0 ||
                 amount.signum() == 0 || amount.signum() == -1) {

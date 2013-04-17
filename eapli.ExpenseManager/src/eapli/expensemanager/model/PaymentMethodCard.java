@@ -26,5 +26,9 @@ public abstract class PaymentMethodCard implements PaymentMethod{
            
        this.number = number;
        this.bankName=bankName;  
-    }   
+    }
+    @Override
+    public String toString() {
+        return "\nCard number: " + number + "\nbank name: " + bankName;
+    }
 }
