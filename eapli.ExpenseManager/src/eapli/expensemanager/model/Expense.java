@@ -7,8 +7,6 @@ package eapli.expensemanager.model;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.Calendar;
-//import java.util.Date;
-//import eapli.expensemanager.model.PaymentMethod;
 import eapli.expensemanager.model.PaymentMethod.types;
 
 /**

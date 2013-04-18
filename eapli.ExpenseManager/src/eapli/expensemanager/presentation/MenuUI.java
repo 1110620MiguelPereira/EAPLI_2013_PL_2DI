@@ -4,7 +4,6 @@
  */
 package eapli.expensemanager.presentation;
 
-import eapli.expensemanager.controllers.BaseController;
 import eapli.util.Console;
 
 /**
@@ -25,6 +24,7 @@ public class MenuUI{
             System.out.println("5. List expenses types");
             System.out.println("6. Register income type");
             System.out.println("7. List income types");
+            System.out.println("8. Register income");
             System.out.println("0. Exit");
             
 
@@ -52,14 +52,18 @@ public class MenuUI{
                     ListExpenseTypeUI letUI = new ListExpenseTypeUI();
                     letUI.show();
                     break;
-                  case 6:
+                case 6:
                     RegisterIncomeTypeUI incTypeUI = new RegisterIncomeTypeUI();
                     incTypeUI.show();
                     break;
-                  case 7:
+                case 7:
                     ListIncomeTypeUI listIncUI = new ListIncomeTypeUI();
-                      listIncUI.show();
-                      break;
+                    listIncUI.show();
+                    break;
+                case 8:
+                    RegisterIncomeUI ri = new RegisterIncomeUI();
+                    ri.show();
+                    break;
             }
         } while (option != 0);
     }

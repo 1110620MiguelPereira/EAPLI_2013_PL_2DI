@@ -1,0 +1,13 @@
+title Register Income (simplefied)
+
+User->+MenuUI: choose option "register income"
+MenuUI->+RegisterIncomeUI: create
+RegisterIncomeUI->RegisterIncomeController: create
+RegisterIncomeUI-->MenuUI:
+User->RegisterIncomeUI:enter amount
+User->RegisterIncomeUI:enter description
+User->RegisterIncomeUI:enter date
+User->RegisterIncomeUI:register income
+RegisterIncomeUI->+RegisterIncomeController:register income(amount, description, date, type)
+RegisterIncomeController->inc Income: create(amount, description, date, type)
+RegisterIncomeController->IncomeRepository: save(inc)

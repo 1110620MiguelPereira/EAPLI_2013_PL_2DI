@@ -13,5 +13,5 @@ import java.util.List;
  */
 public interface IncomeTypeRepository {
     public void save(IncomeType expenseType);
-   public List<IncomeType> getAll();
+    public List<IncomeType> getAll();
 }
