@@ -1,0 +1,18 @@
+title List expense payment methods
+
+
+User -> +MenuUI: Choose option "List payment methods"
+
+
+MenuUI -> +ListExpensePaymentMethodsUI: create
+ListExpensePaymentMethodsUI--> -MenuUI:
+
+ListExpensePaymentMethodsUI-> ListExpensePaymentMethodsController: create
+
+
+ListExpensePaymentMethodsUI-> +ListExpensePaymentMethodsController: List
+
+ListExpensePaymentMethodsController-> +PaymentMethodsRepository: List
+
+PaymentMethodsRepository--> -ListExpensePaymentMethodsController:
+ListExpensePaymentMethodsController--> -ListExpensePaymentMethodsUI:

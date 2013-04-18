@@ -6,23 +6,23 @@ package eapli.expensemanager.presentation;
 
 import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.controllers.ListIncomeTypeController;
+import eapli.expensemanager.model.IncomeType;
 
 /**
  *
- * @author Pedro Branco
+ * @author Adulcinio
  */
 public class ListIncomeTypeUI extends BaseUI{
     ListIncomeTypeController listControllerType = new ListIncomeTypeController();
 
     @Override
     public void show() {      
-        // TODO usar for-each
         // TODO ver cimo evitar duplicação com ListExpenseType
-        for (int i = 0; i < listControllerType.getIncomeTypes().size(); i++) {
-            System.out.println(listControllerType.getIncomeTypes().get(i));
+        for (IncomeType obj: listControllerType.getIncomeTypes())   {
+            System.out.println(obj);
+        
         }
-        System.out.println("OK");
-        super.show();
+        super.show();   
     }
     
     @Override

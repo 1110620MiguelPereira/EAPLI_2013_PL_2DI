@@ -21,5 +21,10 @@ public class InMemoryPaymentMethodRepository implements PaymentMethodRepository{
     public void save(PaymentMethod payMethodDebCard) {
          
          methodsPayment.add(payMethodDebCard);
-    } 
+    }
+     
+     @Override
+    public List<PaymentMethod> getAll() {
+        return methodsPayment;
+    }
 }

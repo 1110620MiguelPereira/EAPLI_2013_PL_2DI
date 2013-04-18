@@ -15,9 +15,9 @@ class RegisterIncomeTypeUI extends BaseRegisterTypesUI   {
 RegisterIncomeTypeController controllerType = new RegisterIncomeTypeController();
     @Override
     public void show() {       
+        super.show();
         controllerType.registerIncomeType(super.type,super.description);
         System.out.println("OK!");
-        super.show();
     }
 
     @Override

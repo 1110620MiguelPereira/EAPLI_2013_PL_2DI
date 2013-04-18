@@ -18,8 +18,9 @@ public class RegisterPaymentMethodDebitCardUI extends RegisterPaymentMethodCardB
     @Override
     public void show()
     {
-        controllerDebitCard.registerPaymentMethodDebitCard(bankname, cardnumber);
-        super.show();
+       super.show();
+       controllerDebitCard.registerPaymentMethodDebitCard(bankname, cardnumber);
+        
     }
 
     @Override
