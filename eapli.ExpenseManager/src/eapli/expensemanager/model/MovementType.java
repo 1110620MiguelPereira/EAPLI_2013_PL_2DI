@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager.model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -15,7 +16,7 @@ import javax.persistence.InheritanceType;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class MovementType {
+public abstract class MovementType implements Serializable {
 
     protected String description;
     
