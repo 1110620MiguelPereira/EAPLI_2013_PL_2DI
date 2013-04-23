@@ -4,6 +4,11 @@
  */
 package eapli.expensemanager.repositories.hibernate;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceUnit;
+
 /**
  *
  * @author Paulo Gandra Sousa
@@ -11,5 +16,14 @@ package eapli.expensemanager.repositories.hibernate;
  * and on https://burtbeckwith.com/blog/?p=40
  */
 public class JpaHibernateUtil {
+    
+        @PersistenceUnit
+    static protected EntityManagerFactory emf = Persistence.createEntityManagerFactory("eapli.expensemanagerPU");
+  
+    protected EntityManager getEntityManager() {
+        EntityManager entityManager = emf.createEntityManager();
+        return entityManager;
+    }
+    
     
 }
