@@ -13,37 +13,17 @@ import eapli.expensemanager.model.PaymentMethod.types;
  *
  * @author Paulo Gandra Sousa
  */
-public class Expense {
-
-    private BigDecimal amount;
-    private String description;
-    private Calendar date;
+public class Expense extends Movement {
     private types paymentMethod;
     private ExpenseType expenseType;
 
      public Expense(BigDecimal amount, String description, int day,int month,int year, types paymentMethod,ExpenseType expType) {
-        if (description == null || amount == null ||
-                description.trim().length() <= 0 ||
-                amount.signum() == 0 || amount.signum() == -1) {
-            throw new IllegalArgumentException();
-        }
+        super(amount, description, day, month, year);
         
-        this.amount = amount;
-        this.description = description;
-        this.paymentMethod=paymentMethod;
-        this.date=DateTime.newCalendarDate(year, month, day);
         this.paymentMethod=paymentMethod;
         this.expenseType=expType;
         //types type = types.CASH;
         // types 
-    }
-
-    public BigDecimal getAmount(){
-        return amount;
-    }
-   
-    public String toString(){
-        return "Amount: "+amount+"\nDate: "+date.get(Calendar.DAY_OF_MONTH)+"/"+(date.get(Calendar.MONTH)+1)+"/"+date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";
     }
     
     public boolean occursAt(int year, int weekNumber) {

@@ -13,23 +13,12 @@ import java.util.Calendar;
  *
  * @author António
  */
-public class Income {
-    private BigDecimal amount;
-    private String description;
-    private Calendar date;
+public class Income extends Movement{
     private IncomeType incomeType;
 
     
     public Income(BigDecimal amount, String description, int day,int month,int year, IncomeType incType) {
-        if (description == null || amount == null ||
-                description.trim().length() <= 0 ||
-                amount.signum() == 0 || amount.signum() == -1) {
-            throw new IllegalArgumentException();
-        }
-        
-        this.amount = amount;
-        this.description = description;
-        this.date=DateTime.newCalendarDate(year, month, day);
+        super(amount, description, day, month, year);
         this.incomeType=incType;
     }
 }
