@@ -31,6 +31,7 @@ public class MenuUI{
                     System.out.println("2. Expense types");
                     System.out.println("3. Payment Methods");
                     System.out.println("4. Income types");
+                    System.out.println("5. All incomes");
                     System.out.println("0. Exit");
                     option = Console.readIntegerFromConsole("Insert option:");
                     switch(option){
@@ -51,6 +52,10 @@ public class MenuUI{
                         case 4:
                             ListIncomeTypeUI listIncUI = new ListIncomeTypeUI();
                             listIncUI.show();
+                            break;
+                        case 5:
+                            ListIncomesUI listAllIncUI = new ListIncomesUI();
+                            listAllIncUI.show();
                             break;
                     }
                     break;

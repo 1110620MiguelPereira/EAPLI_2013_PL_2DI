@@ -21,5 +21,11 @@ public class InMemoryIncomeRepository implements IncomeRepository{
     public void save(Income income) {
         incomes.add(income);
     }
+
+    //TODO consider using Collections.unmodifiableList instead List
+    @Override
+    public List<Income> getAll() {
+        return incomes;
+    }
     
 }
