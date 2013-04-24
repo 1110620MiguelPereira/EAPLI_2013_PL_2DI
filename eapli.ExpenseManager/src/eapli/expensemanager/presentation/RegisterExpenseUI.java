@@ -69,7 +69,7 @@ public class RegisterExpenseUI extends BaseUI {
             }
             option = Console.readIntegerFromConsole("Enter type number:"); 
             if(option-1<expenseTypesCount) exit=true;
-            if(!exit) System.out.println("Opção inválida");
+            if(!exit) System.out.println("Invalid Option");
         } while (!exit) ;
         
         return expensesType_Aux.get(option-1);

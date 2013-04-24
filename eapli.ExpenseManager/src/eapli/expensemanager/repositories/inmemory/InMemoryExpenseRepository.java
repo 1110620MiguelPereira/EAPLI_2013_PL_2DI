@@ -9,6 +9,7 @@ import eapli.expensemanager.repositories.ExpenseRepository;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -46,8 +47,14 @@ public class InMemoryExpenseRepository implements ExpenseRepository{
     }
     
     @Override
-    public List<Expense> getListExpenses(int month, int year){
-        return expenses;
+    public List<Expense> getListExpenses(Calendar initDate,Calendar finalDate) {
+        List<Expense> listExpenseMonth = new ArrayList<Expense>();
+        for (Expense e : expenses) {
+            if (e.occursBetweenDates(initDate, finalDate)) {
+                listExpenseMonth.add(e);
+            }
+        }
+        return listExpenseMonth;
     }
     
 }

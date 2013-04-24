@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -92,6 +93,22 @@ public class Console {
                 Date date = df.parse(strDate);
 
                 return date;
+            } catch (ParseException ex) {
+                Logger.getLogger(Console.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } while (true);
+    }
+    
+    static public Calendar readMonthYearFromConsole(String strPrompt) {
+        do {
+            try {
+                String strDate = readLineFromConsole(strPrompt);
+                strDate="01-"+strDate;
+                SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+
+                Date date =df.parse(strDate);
+                
+                return DateTime.dateToCalendar(date);
             } catch (ParseException ex) {
                 Logger.getLogger(Console.class.getName()).log(Level.SEVERE, null, ex);
             }

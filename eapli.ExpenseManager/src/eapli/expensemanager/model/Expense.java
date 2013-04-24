@@ -44,4 +44,18 @@ public class Expense extends Movement implements Serializable {
     public boolean occursAtMonth(int month, int year) {
         return date.get(Calendar.YEAR)==year && date.get(Calendar.MONTH)+1==month;         
     }
+    public boolean occursBetweenDates(Calendar initDate,Calendar finalDate){
+       
+        int month_date=date.get(Calendar.MONTH)+1;
+        int year_date=date.get(Calendar.YEAR);
+        int month_initDate=initDate.get(Calendar.MONTH)+1;
+        int year_initDate =initDate.get(Calendar.YEAR);
+        int month_finalDate=finalDate.get(Calendar.MONTH)+1;
+        int year_finalDate =finalDate.get(Calendar.YEAR);
+        if((month_date>=month_initDate && year_date>=year_initDate) &&((month_date<=month_finalDate || month_finalDate<=month_date) && year_date<=year_finalDate) ){
+            return true;
+        }
+        return false;
+    }
+
 }
