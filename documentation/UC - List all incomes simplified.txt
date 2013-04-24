@@ -1,0 +1,21 @@
+title List all incomes simplified
+
+
+
+User -> +MenuUI: Choose option "List incomes"
+
+
+
+
+MenuUI -> +ListIncomesUI: create
+ListIncomesUI --> -MenuUI:
+
+ListIncomesUI -> ListIncomesController: create
+
+
+ListIncomesUI -> +ListIncomesController: getIncomes
+
+
+ListIncomesController -> +IncomesRepository: getAll
+IncomesRepository--> -ListIncomesController:
+ListIncomesController --> -ListIncomesUI:

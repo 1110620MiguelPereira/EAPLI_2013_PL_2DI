@@ -5,6 +5,7 @@
 package eapli.expensemanager.repositories;
 
 import eapli.expensemanager.model.Income;
+import java.util.List;
 
 /**
  *
@@ -12,4 +13,5 @@ import eapli.expensemanager.model.Income;
  */
 public interface IncomeRepository {
     public void save(Income income);
+    public List<Income> getAll();
 }
