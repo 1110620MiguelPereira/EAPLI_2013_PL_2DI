@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager.repositories;
 
+import eapli.expensemanager.repositories.hibernate.HibernateExpenseTypeRepository;
 import eapli.expensemanager.repositories.inmemory.InMemoryExpenseRepository;
 import eapli.expensemanager.repositories.inmemory.InMemoryExpenseTypeRepository;
 import eapli.expensemanager.repositories.inmemory.InMemoryIncomeRepository;
@@ -29,7 +30,8 @@ public class RepositoryFactory {
     }
     
     public ExpenseTypeRepository getExpenseTypeRepository() {
-        return new InMemoryExpenseTypeRepository();
+        //return new InMemoryExpenseTypeRepository();
+        return new HibernateExpenseTypeRepository();
     }
     
     public PaymentMethodRepository getPaymentMethodRepository() {
