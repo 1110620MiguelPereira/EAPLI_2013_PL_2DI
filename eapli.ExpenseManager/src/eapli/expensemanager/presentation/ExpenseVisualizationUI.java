@@ -9,6 +9,8 @@ import eapli.expensemanager.controllers.ExpenseVisualizationController;
 import eapli.expensemanager.model.Expense;
 import eapli.util.Console;
 import eapli.util.DateTime;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,15 +21,19 @@ public class ExpenseVisualizationUI extends BaseUI {
 
     
     public void show() {
-        int month = Console.readIntegerFromConsole("Month");
-        int year = Console.readIntegerFromConsole("Year");
-        if (month > 0 && month < 13 && year <= DateTime.currentYear()) {
+
+        System.out.println("Which is the date range you wish to check? (mm-yyyy)");
+        Calendar initDate = Console.readMonthYearFromConsole("Start date: ");
+        Calendar finalDate = Console.readMonthYearFromConsole("End date: ");
+                
+        if (initDate!=null && finalDate!=null) {
             ExpenseVisualizationController EVC = new ExpenseVisualizationController();
-            List<Expense> expenses = EVC.getExpensesOfMonth(month, year);
+          
+            List<Expense> expenses = EVC.getExpensesOfMonth(initDate, finalDate);
             System.out.println("List Expenses:\n");
             for (Expense a : expenses) {
                 System.out.println("" + a.toString());
-                //a.toString();
+               
             }
         } else {
             System.out.println("Invalid Date");
