@@ -6,15 +6,25 @@ package eapli.expensemanager.model;
 
 import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.util.DateTime;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author António
  */
-public class Income extends Movement{
+@Entity
+public class Income extends Movement implements Serializable{
+    
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private IncomeType incomeType;
+
+    public Income() {
+    }
 
     
     public Income(BigDecimal amount, String description, int day,int month,int year, IncomeType incType) {
