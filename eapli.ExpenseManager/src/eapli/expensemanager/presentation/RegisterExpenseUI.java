@@ -7,11 +7,14 @@ package eapli.expensemanager.presentation;
 import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.controllers.RegisterExpenseController;
 import eapli.expensemanager.model.ExpenseType;
+import eapli.expensemanager.model.PaymentMethod;
 import eapli.expensemanager.repositories.inmemory.InMemoryExpenseTypeRepository;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.List;
 import eapli.expensemanager.model.PaymentMethod.types;
+import eapli.expensemanager.repositories.ExpenseTypeRepository;
+import eapli.expensemanager.repositories.PersistenceFactory;
 
 /**
  *
@@ -27,25 +30,15 @@ public class RegisterExpenseUI extends BaseUI {
         int day = Console.readIntegerFromConsole("Day:");
         int month = Console.readIntegerFromConsole("Month:");
         int year = Console.readIntegerFromConsole("Year:");
-        System.out.println("Payment methods");
-        int menu = Console.readIntegerFromConsole("1 - Cash \n2 - Credit Card \n3 - Debit Card \n4 - Check");
-        
-        
-        System.out.println("Lista de Tipos de Despesa:\n");
-
+        System.out.println("Escolha um meio de pagamento:\n");
+        PaymentMethod paymentMethod = askForPaymentMethod();
+        System.out.println("Escolha um tipo de despesa:\n");
         ExpenseType expType = askForExpenseType();
                
-        switch(menu){
-            case 1:
-                controller.registerExpense(amount, description, day,month,year, types.CASH,expType); break;
-            case 2:
-                controller.registerExpense(amount, description, day,month,year, types.CREDITCARD,expType); break;
-            case 3:
-                controller.registerExpense(amount, description, day,month,year, types.DEBITCARD,expType); break;
-            case 4:
-                controller.registerExpense(amount, description, day,month,year, types.CHECK,expType); break;
-        }        
+        controller.registerExpense(amount, description, day,month,year, paymentMethod,expType);
+
         System.out.println("OK");
+        
         super.show();
     }
 
@@ -76,4 +69,26 @@ public class RegisterExpenseUI extends BaseUI {
     
     }
     
+    
+    private PaymentMethod askForPaymentMethod() {
+    
+        // TODO avoid duplicate code with ListExpensetypeUI
+        List<PaymentMethod> paymentMethod_Aux=controller.getPaymentMethods();
+        int paymentMethodsCount = paymentMethod_Aux.size();
+    
+        boolean exit = false;
+        int option;
+        
+        do {
+            for(int i=0;i<paymentMethodsCount;i++) {
+                System.out.println(i+1+" : "+paymentMethod_Aux.get(i).toString());
+            }
+            option = Console.readIntegerFromConsole("Enter payment method number:"); 
+            if(option-1<paymentMethodsCount) exit=true;
+            if(!exit) System.out.println("Invalid Option");
+        } while (!exit) ;
+        
+        return paymentMethod_Aux.get(option-1);
+    
+    }
 }

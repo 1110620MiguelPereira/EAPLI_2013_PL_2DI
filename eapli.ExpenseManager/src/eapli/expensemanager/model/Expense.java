@@ -21,7 +21,7 @@ import javax.persistence.ManyToOne;
 public class Expense extends Movement implements Serializable {
     
     @ManyToOne(cascade = CascadeType.PERSIST)
-    private types paymentMethod;
+    private PaymentMethod paymentMethod;
   
     @ManyToOne(cascade = CascadeType.PERSIST)
     private ExpenseType expenseType;
@@ -29,13 +29,11 @@ public class Expense extends Movement implements Serializable {
     public Expense() {
     }
 
-     public Expense(BigDecimal amount, String description, int day,int month,int year, types paymentMethod,ExpenseType expType) {
+     public Expense(BigDecimal amount, String description, int day,int month,int year, PaymentMethod methodPayment,ExpenseType expType) {
         super(amount, description, day, month, year);
         
-        this.paymentMethod=paymentMethod;
+        this.paymentMethod=methodPayment;
         this.expenseType=expType;
-        //types type = types.CASH;
-        // types 
     }
     
     public boolean occursAt(int year, int weekNumber) {
