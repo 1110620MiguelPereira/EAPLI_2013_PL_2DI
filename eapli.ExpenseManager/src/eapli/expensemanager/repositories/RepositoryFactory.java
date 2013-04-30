@@ -30,8 +30,7 @@ public class RepositoryFactory {
     }
     
     public ExpenseTypeRepository getExpenseTypeRepository() {
-        //return new InMemoryExpenseTypeRepository();
-        return new HibernateExpenseTypeRepository();
+        return new InMemoryExpenseTypeRepository();
     }
     
     public PaymentMethodRepository getPaymentMethodRepository() {
