@@ -6,7 +6,7 @@ package eapli.expensemanager.controllers;
 
 import eapli.expensemanager.model.PaymentMethod;
 import eapli.expensemanager.repositories.PaymentMethodRepository;
-import eapli.expensemanager.repositories.RepositoryFactory;
+import eapli.expensemanager.repositories.PersistenceFactory;
 import java.util.List;
 
 /**
@@ -16,7 +16,7 @@ import java.util.List;
 public class ListExpensePaymentMethodsController extends BaseController {
     
     public List<PaymentMethod>  getPaymentMethods() {
-        PaymentMethodRepository methods = RepositoryFactory.instance().getPaymentMethodRepository();
+        PaymentMethodRepository methods = PersistenceFactory.instance().getPaymentMethodRepository();
         return methods.getAll();
     }    
 }

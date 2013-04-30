@@ -6,7 +6,7 @@ package eapli.expensemanager.controllers;
 
 import eapli.expensemanager.model.IncomeType;
 import eapli.expensemanager.repositories.IncomeTypeRepository;
-import eapli.expensemanager.repositories.RepositoryFactory;
+import eapli.expensemanager.repositories.PersistenceFactory;
 import java.util.List;
 
 /**
@@ -16,7 +16,7 @@ import java.util.List;
 public class ListIncomeTypeController extends BaseController{
     
     public List<IncomeType>  getIncomeTypes() {
-        IncomeTypeRepository etr = RepositoryFactory.instance().getIncomeTypeRepository();
+        IncomeTypeRepository etr = PersistenceFactory.instance().getIncomeTypeRepository();
         return etr.getAll();
     }
 }

@@ -8,7 +8,7 @@ import eapli.expensemanager.model.Income;
 import eapli.expensemanager.model.IncomeType;
 import eapli.expensemanager.repositories.IncomeRepository;
 import eapli.expensemanager.repositories.IncomeTypeRepository;
-import eapli.expensemanager.repositories.RepositoryFactory;
+import eapli.expensemanager.repositories.PersistenceFactory;
 import java.util.List;
 
 /**
@@ -18,7 +18,7 @@ import java.util.List;
 public class ListIncomesController extends BaseController{
    
     public List<Income>  getAllIncomes() {
-        IncomeRepository etr = RepositoryFactory.instance().getIncomeRepository();
+        IncomeRepository etr = PersistenceFactory.instance().getIncomeRepository();
         return etr.getAll();
     }
     

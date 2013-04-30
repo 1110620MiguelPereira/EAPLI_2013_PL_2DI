@@ -15,12 +15,12 @@ import java.util.List;
  *
  * @author schmitzoide
  */
-public class HibernateExpenseTypeRepository extends JpaHibernateUtil<ExpenseType> implements ExpenseTypeRepository {
+public class DBExpenseTypeRepository extends JpaHibernateUtil<ExpenseType> implements ExpenseTypeRepository {
 
     // VAMOS AQUI
 
     
-    public HibernateExpenseTypeRepository(){
+    public DBExpenseTypeRepository(){
     }
     
     @Override

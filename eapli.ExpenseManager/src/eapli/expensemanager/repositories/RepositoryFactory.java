@@ -4,44 +4,23 @@
  */
 package eapli.expensemanager.repositories;
 
-import eapli.expensemanager.repositories.hibernate.HibernateExpenseTypeRepository;
-import eapli.expensemanager.repositories.inmemory.InMemoryExpenseRepository;
-import eapli.expensemanager.repositories.inmemory.InMemoryExpenseTypeRepository;
-import eapli.expensemanager.repositories.inmemory.InMemoryIncomeRepository;
-import eapli.expensemanager.repositories.inmemory.InMemoryIncomeTypeRepository;
-import eapli.expensemanager.repositories.inmemory.InMemoryPaymentMethodRepository;
+
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author Luís
  */
-public class RepositoryFactory {
+public interface RepositoryFactory {
     
-    static RepositoryFactory _instance = new RepositoryFactory();
+    public ExpenseRepository getExpenseRepository(); 
     
-    private RepositoryFactory() { }
+    public ExpenseTypeRepository getExpenseTypeRepository();
+     
+    public PaymentMethodRepository getPaymentMethodRepository(); 
+      
+    public IncomeTypeRepository getIncomeTypeRepository(); 
     
-    public static RepositoryFactory instance() {
-        return _instance;
-    
-    }
-    public ExpenseRepository getExpenseRepository() {
-        return new InMemoryExpenseRepository();
-    }
-    
-    public ExpenseTypeRepository getExpenseTypeRepository() {
-        return new InMemoryExpenseTypeRepository();
-    }
-    
-    public PaymentMethodRepository getPaymentMethodRepository() {
-        return new InMemoryPaymentMethodRepository();
-    }
+    public IncomeRepository getIncomeRepository(); 
+       
    
-     public IncomeTypeRepository getIncomeTypeRepository() {
-        return new InMemoryIncomeTypeRepository();
-    }
-
-    public IncomeRepository getIncomeRepository() {
-        return new InMemoryIncomeRepository();
-    }
 }

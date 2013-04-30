@@ -10,8 +10,8 @@ import eapli.expensemanager.model.Expense;
 import eapli.expensemanager.model.ExpenseType;
 import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.expensemanager.repositories.ExpenseRepository;
-import eapli.expensemanager.repositories.RepositoryFactory;
-//import eapli.expensemanager.repositories.inmemory.InMemoryExpenseRepository;
+import eapli.expensemanager.repositories.PersistenceFactory;
+
 
 /**
  *
@@ -23,7 +23,7 @@ public class BootstrapExpenses
 {
     public void createExpenses()
     {
-        ExpenseRepository repositorio = RepositoryFactory.instance().getExpenseRepository();
+        ExpenseRepository repositorio = PersistenceFactory.instance().getExpenseRepository();
         
 //        BigDecimal amount = new BigDecimal("20.00");
 //        Expense e1 = new Expense(amount,"Mobile Phone Plan");

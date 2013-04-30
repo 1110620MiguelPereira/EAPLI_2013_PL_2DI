@@ -8,7 +8,7 @@ import eapli.expensemanager.model.PaymentMethodCard;
 import eapli.expensemanager.model.PaymentMethodCreditCard;
 import eapli.expensemanager.model.PaymentMethodDebitCard;
 import eapli.expensemanager.repositories.PaymentMethodRepository;
-import eapli.expensemanager.repositories.RepositoryFactory;
+import eapli.expensemanager.repositories.PersistenceFactory;
 
 /**
  *
@@ -36,7 +36,7 @@ public class RegisterPaymentMethodController extends BaseController{
     }
 
     private void doSave(PaymentMethodCard payMethodCard) {
-        PaymentMethodRepository repoPayMetCredit = RepositoryFactory.instance().getPaymentMethodRepository();
+        PaymentMethodRepository repoPayMetCredit = PersistenceFactory.instance().getPaymentMethodRepository();
         repoPayMetCredit.save(payMethodCard);
     }
 }

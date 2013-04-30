@@ -6,8 +6,7 @@ package eapli.expensemanager.bootstrap;
 
 import eapli.expensemanager.model.IncomeType;
 import eapli.expensemanager.repositories.IncomeTypeRepository;
-import eapli.expensemanager.repositories.RepositoryFactory;
-
+import eapli.expensemanager.repositories.PersistenceFactory;
 
 /**
  *
@@ -17,7 +16,7 @@ public class BootstrapIncomeType {
     
      public void createIncomeType()
     {
-    IncomeTypeRepository repositorio = RepositoryFactory.instance().getIncomeTypeRepository();
+    IncomeTypeRepository repositorio = PersistenceFactory.instance().getIncomeTypeRepository();
     
     IncomeType income = new IncomeType("Salário","Salário mensal");
     IncomeType income1 = new IncomeType("Bonus","Bonus salarial");

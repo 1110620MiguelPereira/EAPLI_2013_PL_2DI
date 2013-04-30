@@ -6,7 +6,7 @@ package eapli.expensemanager.controllers;
 
 import eapli.expensemanager.model.Expense;
 import eapli.expensemanager.repositories.ExpenseRepository;
-import eapli.expensemanager.repositories.RepositoryFactory;
+import eapli.expensemanager.repositories.PersistenceFactory;
 import java.util.Calendar;
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class ExpenseVisualizationController extends BaseController{
 
     public List<Expense> getExpensesOfMonth(Calendar initDate,Calendar finalDate) {
         
-        ExpenseRepository repo= RepositoryFactory.instance().getExpenseRepository();
+        ExpenseRepository repo= PersistenceFactory.instance().getExpenseRepository();
 
         return repo.getListExpenses(initDate,finalDate);
     }

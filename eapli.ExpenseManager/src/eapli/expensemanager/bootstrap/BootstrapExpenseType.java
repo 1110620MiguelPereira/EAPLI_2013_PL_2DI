@@ -6,7 +6,8 @@ package eapli.expensemanager.bootstrap;
 
 import eapli.expensemanager.model.ExpenseType;
 import eapli.expensemanager.repositories.ExpenseTypeRepository;
-import eapli.expensemanager.repositories.RepositoryFactory;
+import eapli.expensemanager.repositories.PersistenceFactory;
+
 
 /**
  *
@@ -16,7 +17,7 @@ public class BootstrapExpenseType {
     
      public void createExpenseType()
     {
-    ExpenseTypeRepository repositorio = RepositoryFactory.instance().getExpenseTypeRepository();
+    ExpenseTypeRepository repositorio = PersistenceFactory.instance().getExpenseTypeRepository();
     
     ExpenseType expense = new ExpenseType("Supermercado","Compras ");
     ExpenseType expense1 = new ExpenseType("Restaurante","Jantar ");
