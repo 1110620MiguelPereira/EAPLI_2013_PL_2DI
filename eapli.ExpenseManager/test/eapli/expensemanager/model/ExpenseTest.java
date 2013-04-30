@@ -8,6 +8,11 @@ import java.math.BigDecimal;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import eapli.expensemanager.model.PaymentMethod.types;
+import eapli.util.DateTime;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -41,6 +46,23 @@ public class ExpenseTest {
         Expense instance = new Expense(amount,"expense",24,4,2013,types.CASH,exp);
         boolean expResult = true;
         boolean result = instance.occursAtMonth(month, year);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testoccursBetweenDates() throws ParseException{
+        System.out.println("occursBetweenDates\n");
+        String strDateInit="01-04-2013";
+        String strDatefinal="01-06-2013";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+         Date dateinit =df.parse(strDateInit);
+         Date datefinal =df.parse(strDatefinal);          
+        Calendar initDate=DateTime.dateToCalendar(dateinit);
+        Calendar finalDate=DateTime.dateToCalendar(datefinal);        
+        BigDecimal amount=new BigDecimal(12); 
+        ExpenseType exp=new ExpenseType("compras","compras do mes");
+        Expense instance = new Expense(amount,"expense",24,4,2013,types.CASH,exp);
+        boolean expResult = true;
+        boolean result = instance.occursBetweenDates(initDate,finalDate);
         assertEquals(expResult, result);
     }
 }
