@@ -19,4 +19,6 @@ public interface ExpenseRepository {
     public BigDecimal ExpensesOfWeek(int weekNumber, int year);
     public BigDecimal expensesOfMonth(int month, int year);
     public List<Expense> getListExpenses(Calendar initDate, Calendar finalDate);
+    public List<Expense> getAll();
+    public BigDecimal getTotal();
 }

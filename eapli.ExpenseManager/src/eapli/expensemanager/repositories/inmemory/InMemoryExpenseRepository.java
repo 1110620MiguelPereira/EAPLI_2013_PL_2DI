@@ -56,5 +56,19 @@ public class InMemoryExpenseRepository implements ExpenseRepository{
         }
         return listExpenseMonth;
     }
+
+    @Override
+    public List<Expense> getAll() {
+        return expenses;
+    }
+
+    @Override
+    public BigDecimal getTotal() {
+        BigDecimal total = new BigDecimal(0.0);
+        for(Expense ex : expenses){
+            total = total.add(ex.getAmount());
+        }
+        return total;
+    }
     
 }
