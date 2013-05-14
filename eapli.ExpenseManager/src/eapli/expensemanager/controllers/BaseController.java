@@ -4,6 +4,7 @@
  */
 package eapli.expensemanager.controllers;
 
+import eapli.expensemanager.model.AccountServices;
 import eapli.expensemanager.repositories.PersistenceFactory;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
@@ -19,5 +20,10 @@ public class BaseController {
     }
     public BigDecimal expensesOfThisMonth() {
         return PersistenceFactory.instance().getExpenseRepository().expensesOfMonth(DateTime.currentMonth(), DateTime.currentYear());
+    }
+    
+    public BigDecimal currentBalance(){
+        AccountServices as = new AccountServices();
+        return as.getCurrentBalance();
     }
 }

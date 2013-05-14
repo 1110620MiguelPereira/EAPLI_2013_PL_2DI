@@ -6,6 +6,7 @@ package eapli.expensemanager.repositories.inmemory;
 
 import eapli.expensemanager.model.Income;
 import eapli.expensemanager.repositories.IncomeRepository;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,15 @@ public class InMemoryIncomeRepository implements IncomeRepository{
     @Override
     public List<Income> getAll() {
         return incomes;
+    }
+
+    @Override
+    public BigDecimal getTotal() {
+        BigDecimal total = new BigDecimal(0.0);
+        for(Income in : incomes){
+            total = total.add(in.getAmount());
+        }
+        return total;
     }
     
 }
