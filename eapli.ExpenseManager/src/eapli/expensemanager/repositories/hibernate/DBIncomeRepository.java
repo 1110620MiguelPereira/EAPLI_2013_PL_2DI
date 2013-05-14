@@ -33,6 +33,11 @@ public class DBIncomeRepository extends JpaHibernateUtil<IncomeType> implements 
     public List<Income> getAll() {
         return (List)findAll();
     }
+
+    @Override
+    public BigDecimal getTotal() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
     
     
