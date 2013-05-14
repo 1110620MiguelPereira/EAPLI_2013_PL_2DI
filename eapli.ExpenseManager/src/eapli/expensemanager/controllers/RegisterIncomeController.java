@@ -11,6 +11,8 @@ import eapli.expensemanager.model.IncomeType;
 import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.expensemanager.repositories.IncomeRepository;
 import eapli.expensemanager.repositories.PersistenceFactory;
+import eapli.expensemanager.repositories.RepositoryFactory;
+import eapli.expensemanager.repositories.hibernate.DBRepositoryFactory;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -22,13 +24,12 @@ public class RegisterIncomeController extends BaseController{
     
    public void registerIncome(BigDecimal amount, String description, int day,int month,int year, IncomeType typeIncome) {
         Income income = new Income(amount, description,day,month,year, typeIncome);
-        
-        IncomeRepository repo = PersistenceFactory.instance().getIncomeRepository();
+        IncomeRepository repo = PersistenceFactory.instance().buildRepositoryFactory(false).getIncomeRepository();
         repo.save(income);
     }    
     
     public List<IncomeType> getIncomeTypes() {
-        return PersistenceFactory.instance().getIncomeTypeRepository().getAll();
+        return PersistenceFactory.instance().buildRepositoryFactory(false).getIncomeTypeRepository().getAll();
     }
     
 }

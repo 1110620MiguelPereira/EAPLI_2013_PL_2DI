@@ -48,8 +48,6 @@ public abstract class JpaHibernateUtil<T>  {
     //}
 
     public Object update(Object t) {
-        
-        // FALTA VERIFICAR SE JÁ EXISTE
         return this.getEntityManager().merge(t);
     }
 

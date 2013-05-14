@@ -19,7 +19,7 @@ public class RegisterExpenseTypeController extends BaseController{
         ExpenseType expenseType = new ExpenseType(type, description);
         
          
-        ExpenseTypeRepository repo = PersistenceFactory.instance().getExpenseTypeRepository();
+        ExpenseTypeRepository repo = PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseTypeRepository();
         repo.save(expenseType);
     }
     
