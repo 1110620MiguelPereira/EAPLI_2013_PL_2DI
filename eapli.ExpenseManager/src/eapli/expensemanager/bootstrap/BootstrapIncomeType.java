@@ -16,7 +16,7 @@ public class BootstrapIncomeType {
     
      public void createIncomeType()
     {
-    IncomeTypeRepository repositorio = PersistenceFactory.instance().getIncomeTypeRepository();
+    IncomeTypeRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory(false).getIncomeTypeRepository();
     
     IncomeType income = new IncomeType("Salário","Salário mensal");
     IncomeType income1 = new IncomeType("Bonus","Bonus salarial");

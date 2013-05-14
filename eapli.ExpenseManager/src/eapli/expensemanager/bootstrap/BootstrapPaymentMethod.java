@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 public class BootstrapPaymentMethod {
         public void createPaymentMethods()
     {
-        PaymentMethodRepository repositorio = PersistenceFactory.instance().getPaymentMethodRepository();
+        PaymentMethodRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory(false).getPaymentMethodRepository();
         
         PaymentMethodCreditCard creditCard1 = new PaymentMethodCreditCard("1111 2222 3333 4444","CGD");
         PaymentMethodDebitCard debitCard1 = new PaymentMethodDebitCard("5555 6666 7777 8888","CGD");

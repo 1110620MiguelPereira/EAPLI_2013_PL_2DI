@@ -3,6 +3,7 @@
   <persistence-unit name="eapli.ExpenseManagerPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>eapli.expensemanager.model.ExpenseType</class>
+    <class>eapli.expensemanager.model.Income</class>
     <properties>
       <property name="hibernate.connection.username" value="sa"/>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>

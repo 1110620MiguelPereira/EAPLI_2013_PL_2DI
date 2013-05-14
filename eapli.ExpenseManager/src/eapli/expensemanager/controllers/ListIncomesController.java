@@ -18,7 +18,7 @@ import java.util.List;
 public class ListIncomesController extends BaseController{
    
     public List<Income>  getAllIncomes() {
-        IncomeRepository etr = PersistenceFactory.instance().getIncomeRepository();
+        IncomeRepository etr = PersistenceFactory.instance().buildRepositoryFactory(false).getIncomeRepository();
         return etr.getAll();
     }
     
