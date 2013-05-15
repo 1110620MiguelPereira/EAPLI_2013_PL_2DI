@@ -17,9 +17,6 @@ public class PersistenceFactory {
     private PersistenceFactory(){}
     
     
-    
-    
-    
     public static PersistenceFactory instance (){
         return _instance;
         
@@ -27,6 +24,7 @@ public class PersistenceFactory {
     
     //FALTA LER FICHEIRO DE CONFIGURAÇÃO
 
+    // RETIRAR ESTE BOOLEAN PARA UMA VARIAVEL DE CLASSE
     public RepositoryFactory buildRepositoryFactory(boolean shouldUseDB) {
         
         if(shouldUseDB){

@@ -38,7 +38,7 @@ public class DBRepositoryFactory implements RepositoryFactory{
 
     @Override
     public IncomeTypeRepository getIncomeTypeRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new DBIncomeTypeRepository();
     }
 
     @Override
