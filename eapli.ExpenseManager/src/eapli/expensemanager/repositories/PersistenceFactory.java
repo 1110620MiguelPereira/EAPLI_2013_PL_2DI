@@ -36,8 +36,8 @@ public class PersistenceFactory {
 
     //FALTA LER FICHEIRO DE CONFIGURAÇÃO
     private boolean readConfiguration() {
-        //Temporarily set to false in order to use InMemory
-        return false;
+        //True = Database ; False = InMemory
+        return true;
     }
     
     
