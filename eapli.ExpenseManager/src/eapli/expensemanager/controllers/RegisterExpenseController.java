@@ -5,7 +5,6 @@
 package eapli.expensemanager.controllers;
 
 import eapli.expensemanager.model.Expense;
-import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.expensemanager.model.ExpenseType;
 import eapli.expensemanager.model.PaymentMethod;
 import eapli.expensemanager.repositories.ExpenseRepository;
@@ -23,16 +22,16 @@ public class RegisterExpenseController extends BaseController{
     public void registerExpense(BigDecimal amount, String description, int day,int month,int year, PaymentMethod methodPayment, ExpenseType typeExpense) {
         Expense expense = new Expense(amount, description,day,month,year,methodPayment,typeExpense);
         
-        ExpenseRepository repo = PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseRepository();
+        ExpenseRepository repo = PersistenceFactory.instance().buildRepositoryFactory().getExpenseRepository();
         repo.save(expense);
     }
 
     public List<ExpenseType> getExpenseTypes() {
-        return PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseTypeRepository().getAll();
+        return PersistenceFactory.instance().buildRepositoryFactory().getExpenseTypeRepository().getAll();
     }
     
     public List<PaymentMethod> getPaymentMethods() {
-        return PersistenceFactory.instance().buildRepositoryFactory(false).getPaymentMethodRepository().getAll();
+        return PersistenceFactory.instance().buildRepositoryFactory().getPaymentMethodRepository().getAll();
     }
     
 }

@@ -17,10 +17,12 @@ public abstract class BaseUI {
         showStatus();
     }
     
-    protected void showStatus(){                
+    protected void showStatus(){
+        BigDecimal currentBalance = this.getController().currentBalance();
         BigDecimal expensesWeek = this.getController().ExpensesOfWeek();
         BigDecimal expensesMonth = this.getController().expensesOfThisMonth();
         System.out.println("\nGasto Mensal: "+expensesMonth+"         Gasto Semanal: "+expensesWeek+"\n");
+        System.out.println("Saldo actual: " + currentBalance);
     }
     
     abstract protected BaseController getController();

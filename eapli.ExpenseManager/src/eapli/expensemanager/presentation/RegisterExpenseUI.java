@@ -12,7 +12,6 @@ import eapli.expensemanager.repositories.inmemory.InMemoryExpenseTypeRepository;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.List;
-import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.expensemanager.repositories.ExpenseTypeRepository;
 import eapli.expensemanager.repositories.PersistenceFactory;
 

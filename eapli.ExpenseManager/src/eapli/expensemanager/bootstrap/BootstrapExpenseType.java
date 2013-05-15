@@ -17,7 +17,7 @@ public class BootstrapExpenseType {
     
      public void createExpenseType()
     {
-    ExpenseTypeRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseTypeRepository();
+    ExpenseTypeRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory().getExpenseTypeRepository();
     
     ExpenseType expense = new ExpenseType("Supermercado","Compras ");
     ExpenseType expense1 = new ExpenseType("Restaurante","Jantar ");

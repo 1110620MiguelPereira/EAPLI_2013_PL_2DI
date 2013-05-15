@@ -5,6 +5,7 @@
 package eapli.expensemanager.repositories;
 
 import eapli.expensemanager.model.Income;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -14,4 +15,5 @@ import java.util.List;
 public interface IncomeRepository {
     public void save(Income income);
     public List<Income> getAll();
+    public BigDecimal getTotal();
 }

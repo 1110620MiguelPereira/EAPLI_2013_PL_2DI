@@ -36,7 +36,7 @@ public class RegisterPaymentMethodController extends BaseController{
     }
 
     private void doSave(PaymentMethodCard payMethodCard) {
-        PaymentMethodRepository repoPayMetCredit = PersistenceFactory.instance().buildRepositoryFactory(false).getPaymentMethodRepository();
+        PaymentMethodRepository repoPayMetCredit = PersistenceFactory.instance().buildRepositoryFactory().getPaymentMethodRepository();
         repoPayMetCredit.save(payMethodCard);
     }
 }
