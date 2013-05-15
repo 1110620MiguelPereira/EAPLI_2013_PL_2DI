@@ -16,10 +16,10 @@ import java.math.BigDecimal;
 public class BaseController {
 
     public BigDecimal ExpensesOfWeek() { 
-        return PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseRepository().ExpensesOfWeek(DateTime.currentWeekNumber(), DateTime.currentYear());
+        return PersistenceFactory.instance().buildRepositoryFactory().getExpenseRepository().ExpensesOfWeek(DateTime.currentWeekNumber(), DateTime.currentYear());
     }
     public BigDecimal expensesOfThisMonth() {
-        return PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseRepository().expensesOfMonth(DateTime.currentMonth(), DateTime.currentYear());
+        return PersistenceFactory.instance().buildRepositoryFactory().getExpenseRepository().expensesOfMonth(DateTime.currentMonth(), DateTime.currentYear());
     }
     
     public BigDecimal currentBalance(){

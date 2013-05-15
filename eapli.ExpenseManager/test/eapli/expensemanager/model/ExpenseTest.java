@@ -7,7 +7,6 @@ package eapli.expensemanager.model;
 import java.math.BigDecimal;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.util.DateTime;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
