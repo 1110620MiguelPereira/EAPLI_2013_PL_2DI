@@ -1,14 +1,16 @@
 package eapli.expensemanager.model;
 
 //import com.sun.istack.internal.NotNull; - Erro e warnings se import for feito
+
 import javax.persistence.Entity;
-import javax.persistence.Id;
+
+
 
 @Entity
-public abstract class PaymentMethodCard implements PaymentMethod, java.io.Serializable {
+public abstract class PaymentMethodCard extends PaymentMethod implements java.io.Serializable {
 
-    @Id
-    int id_paymentMethod;
+   
+    
     //@NotNull
     String number;
     //@NotNull
