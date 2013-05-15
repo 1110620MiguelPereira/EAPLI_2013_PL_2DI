@@ -22,15 +22,17 @@ public abstract class JpaHibernateUtil<T>  {
     
    @PersistenceUnit
     static protected EntityManagerFactory emf = Persistence.createEntityManagerFactory("eapli.ExpenseManagerPU");
-    protected EntityManager getEntityManager() {
-        EntityManager entityManager = emf.createEntityManager();
+   EntityManager entityManager;
+   
+   protected EntityManager getEntityManager() {
+        
+        if(entityManager==null || !entityManager.isOpen())       
+            entityManager = emf.createEntityManager();
+        
         return entityManager;
     }
-
     protected Class<T> entityClass;
-     
-    
-    
+       
     public JpaHibernateUtil() {
         ParameterizedType genericSuperclass = (ParameterizedType) getClass()
              .getGenericSuperclass();
