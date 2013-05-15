@@ -7,7 +7,6 @@ package eapli.expensemanager.presentation;
 import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.controllers.RegisterIncomeController;
 import eapli.expensemanager.model.IncomeType;
-import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.List;

@@ -11,14 +11,10 @@ import eapli.expensemanager.repositories.inmemory.InMemoryRepositoryFactory;
  *
  * @author Luís
  */
-public class PersistenceFactory implements RepositoryFactory{
+public class PersistenceFactory {
     static PersistenceFactory _instance = new PersistenceFactory();
     
     private PersistenceFactory(){}
-    
-    private InMemoryRepositoryFactory inMemory = new InMemoryRepositoryFactory();
-    private DBRepositoryFactory db = new DBRepositoryFactory();
-    
     
     
     public static PersistenceFactory instance (){
@@ -28,32 +24,16 @@ public class PersistenceFactory implements RepositoryFactory{
     
     //FALTA LER FICHEIRO DE CONFIGURAÇÃO
 
-    @Override
-    public ExpenseRepository getExpenseRepository() {
-        return inMemory.getExpenseRepository() ;
+    // RETIRAR ESTE BOOLEAN PARA UMA VARIAVEL DE CLASSE
+    public RepositoryFactory buildRepositoryFactory(boolean shouldUseDB) {
+        
+        if(shouldUseDB){
+            return new DBRepositoryFactory();
+        
+        } else {
+            return new InMemoryRepositoryFactory();
+        }
     }
-
-    @Override
-    public ExpenseTypeRepository getExpenseTypeRepository() {
-        return inMemory.getExpenseTypeRepository();
-    }
-
-    @Override
-    public PaymentMethodRepository getPaymentMethodRepository() {
-        return inMemory.getPaymentMethodRepository();
-    }
-
-    @Override
-    public IncomeTypeRepository getIncomeTypeRepository() {
-        return inMemory.getIncomeTypeRepository();
-    }
-
-    @Override
-    public IncomeRepository getIncomeRepository() {
-        return inMemory.getIncomeRepository();
-    }
-    
-    
     
     
     

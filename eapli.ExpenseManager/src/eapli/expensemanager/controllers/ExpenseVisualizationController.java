@@ -18,7 +18,7 @@ public class ExpenseVisualizationController extends BaseController{
 
     public List<Expense> getExpensesOfMonth(Calendar initDate,Calendar finalDate) {
         
-        ExpenseRepository repo= PersistenceFactory.instance().getExpenseRepository();
+        ExpenseRepository repo= PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseRepository();
 
         return repo.getListExpenses(initDate,finalDate);
     }

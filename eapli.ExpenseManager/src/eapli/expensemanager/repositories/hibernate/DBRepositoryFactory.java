@@ -17,7 +17,9 @@ import eapli.expensemanager.repositories.RepositoryFactory;
  */
 public class DBRepositoryFactory implements RepositoryFactory{
 
+    
     public DBRepositoryFactory(){}
+    
     
     @Override
     public ExpenseRepository getExpenseRepository() {
@@ -36,12 +38,12 @@ public class DBRepositoryFactory implements RepositoryFactory{
 
     @Override
     public IncomeTypeRepository getIncomeTypeRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new DBIncomeTypeRepository();
     }
 
     @Override
     public IncomeRepository getIncomeRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new DBIncomeRepository();
     }
     
 }

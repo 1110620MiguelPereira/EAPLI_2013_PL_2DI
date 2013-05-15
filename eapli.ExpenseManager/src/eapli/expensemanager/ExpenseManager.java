@@ -7,6 +7,7 @@ package eapli.expensemanager;
 import eapli.expensemanager.bootstrap.BootstrapExpenseType;
 import eapli.expensemanager.bootstrap.BootstrapExpenses;
 import eapli.expensemanager.bootstrap.BootstrapIncomeType;
+import eapli.expensemanager.bootstrap.BootstrapIncomes;
 import eapli.expensemanager.bootstrap.BootstrapPaymentMethod;
 import eapli.expensemanager.presentation.MenuUI;
 
@@ -26,6 +27,9 @@ public class ExpenseManager {
         
         BootstrapExpenseType expenseType = new BootstrapExpenseType();
         expenseType.createExpenseType();
+        
+        BootstrapIncomes incomes = new BootstrapIncomes();
+        incomes.createIncomes();
         
         BootstrapIncomeType incomeType = new BootstrapIncomeType();
         incomeType.createIncomeType();
