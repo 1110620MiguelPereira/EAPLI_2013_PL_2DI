@@ -4,7 +4,6 @@
  */
 package eapli.expensemanager.model;
 
-import javax.persistence.Entity;
 
 /**
  *

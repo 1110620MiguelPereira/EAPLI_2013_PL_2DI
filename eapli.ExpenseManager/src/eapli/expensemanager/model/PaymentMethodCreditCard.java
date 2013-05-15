@@ -1,16 +1,15 @@
 package eapli.expensemanager.model;
 
-/**
- *
- * @author Pedro Leal 1110863
- */
+import javax.persistence.Entity;
+
+@Entity
 public class PaymentMethodCreditCard extends PaymentMethodCard {
-    
-    public PaymentMethodCreditCard(){
+
+    public PaymentMethodCreditCard() {
         super();
     }
-    
-    public PaymentMethodCreditCard(String number, String bankName){
+
+    public PaymentMethodCreditCard(String number, String bankName) {
         super(number, bankName);
     }
 }
