@@ -4,7 +4,6 @@
  */
 package eapli.expensemanager.model;
 
-import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.util.DateTime;
 import java.io.Serializable;
 import java.math.BigDecimal;

@@ -8,7 +8,6 @@ import eapli.expensemanager.controllers.BaseController;
 import eapli.expensemanager.model.ExpenseType;
 import eapli.expensemanager.model.Income;
 import eapli.expensemanager.model.IncomeType;
-import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.expensemanager.repositories.IncomeRepository;
 import eapli.expensemanager.repositories.PersistenceFactory;
 import eapli.expensemanager.repositories.RepositoryFactory;
@@ -29,7 +28,7 @@ public class RegisterIncomeController extends BaseController{
     }    
     
     public List<IncomeType> getIncomeTypes() {
-        return PersistenceFactory.instance().buildRepositoryFactory(false).getIncomeTypeRepository().getAll();
+        return PersistenceFactory.instance().buildRepositoryFactory(true).getIncomeTypeRepository().getAll();
     }
     
 }

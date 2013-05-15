@@ -5,7 +5,6 @@
 package eapli.expensemanager.controllers;
 
 import eapli.expensemanager.model.Expense;
-import eapli.expensemanager.model.PaymentMethod.types;
 import eapli.expensemanager.model.ExpenseType;
 import eapli.expensemanager.model.PaymentMethod;
 import eapli.expensemanager.repositories.ExpenseRepository;
