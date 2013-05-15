@@ -12,6 +12,7 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -19,9 +20,13 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class Expense extends Movement implements Serializable {
-    
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private PaymentMethod paymentMethod;
+   
+    // @ManyToOne(cascade = CascadeType.PERSIST)
+    //TODO quando o mapeamento da interface paymentMethod 
+    //..e as classes que a implementam estiver realizado descomentar a linha acima e retirar o transient
+   
+    @Transient
+     private PaymentMethod paymentMethod;
   
     @ManyToOne(cascade = CascadeType.PERSIST)
     private ExpenseType expenseType;
