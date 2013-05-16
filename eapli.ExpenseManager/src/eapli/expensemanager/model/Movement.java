@@ -50,6 +50,10 @@ public abstract class Movement implements Serializable {
         return amount;
     }
     
+    public Long getID_Movement(){
+        return id_Movement;       
+    }
+    
     @Override
     public String toString(){
         return "Amount: "+amount+"\nDate: "+date.get(Calendar.DAY_OF_MONTH)+"/"+(date.get(Calendar.MONTH)+1)+"/"+date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";

@@ -23,7 +23,7 @@ public class DBRepositoryFactory implements RepositoryFactory{
     
     @Override
     public ExpenseRepository getExpenseRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new DBExpenseRepository();
     }
 
     @Override
