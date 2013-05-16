@@ -27,8 +27,9 @@ public class AccountServices {
     public AccountServices(BigDecimal initialValue) {
         balance = initialValue;
     }
+   
+    public BigDecimal getCurrentBalance(){
 
-    public BigDecimal getCurrentBalance() {
         IncomeRepository incr = PersistenceFactory.instance().buildRepositoryFactory().getIncomeRepository();
         ExpenseRepository expr = PersistenceFactory.instance().buildRepositoryFactory().getExpenseRepository();
         balance = incr.getTotal().subtract(expr.getTotal());
