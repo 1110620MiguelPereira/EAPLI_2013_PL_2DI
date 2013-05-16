@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author Fábio Queirós
  */
 public interface ExpenseTypeRepository {
     public void save(ExpenseType expenseType);

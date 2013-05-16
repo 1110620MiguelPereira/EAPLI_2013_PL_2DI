@@ -11,7 +11,7 @@ import eapli.expensemanager.repositories.PersistenceFactory;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author Fábio Queirós
  */
 public class RegisterExpenseTypeController extends BaseController{
 

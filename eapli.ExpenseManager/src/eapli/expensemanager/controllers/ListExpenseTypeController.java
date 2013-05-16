@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author Fábio Queirós
  */
 public class ListExpenseTypeController extends BaseController{
 

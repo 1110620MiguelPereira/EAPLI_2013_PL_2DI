@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author Fábio Queirós
  */
 @Entity
 public class ExpenseType extends MovementType implements Serializable {

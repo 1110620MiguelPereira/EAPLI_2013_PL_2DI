@@ -32,6 +32,7 @@ public class MenuUI{
                     System.out.println("3. Payment Methods");
                     System.out.println("4. Income types");
                     System.out.println("5. All incomes");
+                    System.out.println("6. list expenses agregated by type");
                     System.out.println("0. Exit");
                     option = Console.readIntegerFromConsole("Insert option:");
                     switch(option){
@@ -56,6 +57,10 @@ public class MenuUI{
                         case 5:
                             ListIncomesUI listAllIncUI = new ListIncomesUI();
                             listAllIncUI.show();
+                            break;
+                        case 6:
+                            ListExpenseAgregretedUI leaUI = new ListExpenseAgregretedUI();
+                            leaUI.show();
                             break;
                     }
                     break;
