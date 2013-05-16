@@ -36,7 +36,7 @@ public class AccountServices {
     }
 
     public Map<ExpenseType, Agregation> getExpenseAgregationByType(Calendar initDate, Calendar finalDate) {
-        ExpenseRepository expr = PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseRepository();
+        ExpenseRepository expr = PersistenceFactory.instance().buildRepositoryFactory().getExpenseRepository();
         List<Expense> expenses = expr.getListExpenses(initDate, finalDate);
         ExpenseAgregated eag = new ExpenseAgregated();
         for (Expense e : expenses) {
