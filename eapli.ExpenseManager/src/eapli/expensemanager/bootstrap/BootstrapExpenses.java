@@ -25,8 +25,8 @@ public class BootstrapExpenses
 {
     public void createExpenses()
     {
-        ExpenseRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseRepository();
-        PaymentMethodRepository repositorioPaymentMethod = PersistenceFactory.instance().buildRepositoryFactory(false).getPaymentMethodRepository();
+        ExpenseRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory().getExpenseRepository();
+        PaymentMethodRepository repositorioPaymentMethod = PersistenceFactory.instance().buildRepositoryFactory().getPaymentMethodRepository();
         
         List<PaymentMethod> paymentMethods = repositorioPaymentMethod.getAll();
         

@@ -16,7 +16,7 @@ import java.util.List;
 public class ListExpenseTypeController extends BaseController{
 
     public List<ExpenseType>  getExpenseTypes() {
-        ExpenseTypeRepository etr = PersistenceFactory.instance().buildRepositoryFactory(false).getExpenseTypeRepository();
+        ExpenseTypeRepository etr = PersistenceFactory.instance().buildRepositoryFactory().getExpenseTypeRepository();
         return etr.getAll();
     }
     

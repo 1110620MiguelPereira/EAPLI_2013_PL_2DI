@@ -4,10 +4,14 @@
  */
 package eapli.expensemanager.model;
 
+import javax.persistence.Entity;
+
+
 /**
  *
  * @author schmitzoide
  */
-public class PaymentMethodCash implements PaymentMethod {
-    
+@Entity
+public class PaymentMethodCash extends PaymentMethod {
+
 }

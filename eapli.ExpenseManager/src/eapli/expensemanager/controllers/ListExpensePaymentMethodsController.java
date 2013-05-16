@@ -16,7 +16,7 @@ import java.util.List;
 public class ListExpensePaymentMethodsController extends BaseController {
     
     public List<PaymentMethod>  getPaymentMethods() {
-        PaymentMethodRepository methods = PersistenceFactory.instance().buildRepositoryFactory(false).getPaymentMethodRepository();
+        PaymentMethodRepository methods = PersistenceFactory.instance().buildRepositoryFactory().getPaymentMethodRepository();
         return methods.getAll();
     }    
 }

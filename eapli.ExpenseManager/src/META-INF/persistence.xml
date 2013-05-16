@@ -4,7 +4,10 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>eapli.expensemanager.model.ExpenseType</class>
     <class>eapli.expensemanager.model.Income</class>
+    <class>eapli.expensemanager.model.Expense</class>
     <class>eapli.expensemanager.model.IncomeType</class>
+    <class>eapli.expensemanager.model.Movement</class>
+    <class>eapli.expensemanager.model.MovementType</class>
     <properties>
       <property name="hibernate.connection.username" value="sa"/>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>

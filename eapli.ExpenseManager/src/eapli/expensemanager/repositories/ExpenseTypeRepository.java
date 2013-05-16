@@ -12,6 +12,7 @@ import java.util.List;
  * @author Fábio Queirós
  */
 public interface ExpenseTypeRepository {
+     public boolean findById(String shortName);
     public void save(ExpenseType expenseType);
    public List<ExpenseType> getAll();
 }

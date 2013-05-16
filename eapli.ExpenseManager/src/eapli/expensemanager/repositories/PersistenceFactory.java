@@ -14,6 +14,7 @@ import eapli.expensemanager.repositories.inmemory.InMemoryRepositoryFactory;
 public class PersistenceFactory {
     static PersistenceFactory _instance = new PersistenceFactory();
     
+    
     private PersistenceFactory(){}
     
     
@@ -22,17 +23,21 @@ public class PersistenceFactory {
         
     }
     
-    //FALTA LER FICHEIRO DE CONFIGURAÇÃO
-
-    // RETIRAR ESTE BOOLEAN PARA UMA VARIAVEL DE CLASSE
-    public RepositoryFactory buildRepositoryFactory(boolean shouldUseDB) {
-        
+    
+    public RepositoryFactory buildRepositoryFactory() {
+        boolean shouldUseDB = readConfiguration();
         if(shouldUseDB){
             return new DBRepositoryFactory();
         
         } else {
             return new InMemoryRepositoryFactory();
         }
+    }
+
+    //FALTA LER FICHEIRO DE CONFIGURAÇÃO
+    private boolean readConfiguration() {
+        //True = Database ; False = InMemory
+        return true;
     }
     
     

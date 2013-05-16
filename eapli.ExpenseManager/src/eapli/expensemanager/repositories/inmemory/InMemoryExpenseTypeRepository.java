@@ -35,5 +35,10 @@ public class InMemoryExpenseTypeRepository implements ExpenseTypeRepository{
     public void save(ExpenseType expenseType) {
         expensesType.add(expenseType);
     }
+
+    @Override
+    public boolean findById(String shortName) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

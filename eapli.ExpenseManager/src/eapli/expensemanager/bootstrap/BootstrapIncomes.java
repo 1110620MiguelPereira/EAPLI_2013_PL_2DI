@@ -18,7 +18,7 @@ import java.math.BigDecimal;
  */
 public class BootstrapIncomes {
     public void createIncomes(){
-        IncomeRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory(false).getIncomeRepository();
+        IncomeRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory().getIncomeRepository();
         
         IncomeType income = new IncomeType("Salário","Salário Mensal ");
         IncomeType income1 = new IncomeType("Bónus","Bónus Mensal ");

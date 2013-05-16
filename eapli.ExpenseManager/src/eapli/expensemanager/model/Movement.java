@@ -27,7 +27,7 @@ public abstract class Movement implements Serializable {
     
     
     @Id   
-    @GeneratedValue  
+    @GeneratedValue(strategy = GenerationType.TABLE)  
     private Long id_Movement;  
     
     public Movement() {
