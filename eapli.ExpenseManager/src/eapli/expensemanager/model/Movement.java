@@ -15,20 +15,20 @@ import javax.persistence.*;
  * @author Daniel
  */
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Movement implements Serializable {
     protected BigDecimal amount;
    
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    protected Calendar date; 
+    protected Calendar movement_date; 
     
     protected String description;
     
     
     @Id   
-    @GeneratedValue(strategy = GenerationType.TABLE)  
-    private Long id_Movement;  
+    @GeneratedValue 
+    private Integer id_Movement;  
     
     public Movement() {
     }
@@ -43,20 +43,20 @@ public abstract class Movement implements Serializable {
         
         this.amount = amount;
         this.description = description;
-        this.date=DateTime.newCalendarDate(year, month, day);
+        this.movement_date=DateTime.newCalendarDate(year, month, day);
     }
     
     public BigDecimal getAmount(){
         return amount;
     }
     
-    public Long getID_Movement(){
+    public Integer getID_Movement(){
         return id_Movement;       
     }
     
     @Override
     public String toString(){
-        return "Amount: "+amount+"\nDate: "+date.get(Calendar.DAY_OF_MONTH)+"/"+(date.get(Calendar.MONTH)+1)+"/"+date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";
+        return "Amount: "+amount+"\nDate: "+movement_date.get(Calendar.DAY_OF_MONTH)+"/"+(movement_date.get(Calendar.MONTH)+1)+"/"+movement_date.get(Calendar.YEAR)+"\nDescription: "+description+"\n";
     }
 
    
