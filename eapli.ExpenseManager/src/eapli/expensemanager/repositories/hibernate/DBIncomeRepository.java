@@ -14,6 +14,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 /**
  *
@@ -24,9 +26,23 @@ public class DBIncomeRepository extends JpaHibernateUtil<IncomeType> implements 
 
 
     @Override
-    public void save(Income income) {
-        // FALTA VERIFICAR SE JÁ EXISTE
-        update(income);
+    public void save(Income income) {        
+        EntityManager em = getEntityManager();
+        assert em != null;
+        EntityTransaction tx = em.getTransaction();
+        tx.begin();
+        
+        if(income.getID_Movement()==null)
+        {
+            //em.persist(expense);
+            em.merge(income);
+        }else
+        {
+            em.merge(income);
+        }
+                
+        tx.commit();
+        em.close();
     }
 
     @Override
@@ -36,7 +52,7 @@ public class DBIncomeRepository extends JpaHibernateUtil<IncomeType> implements 
 
     @Override
     public BigDecimal getTotal() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.AMOUNT) FROM " + entityClass.getSimpleName()).getSingleResult();
     }
     
     
