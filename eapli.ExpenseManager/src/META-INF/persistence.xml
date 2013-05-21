@@ -8,6 +8,11 @@
     <class>eapli.expensemanager.model.IncomeType</class>
     <class>eapli.expensemanager.model.Movement</class>
     <class>eapli.expensemanager.model.MovementType</class>
+    <class>eapli.expensemanager.model.PaymentMethod</class>
+    <class>eapli.expensemanager.model.PaymentMethodCard</class>
+    <class>eapli.expensemanager.model.PaymentMethodCash</class>
+    <class>eapli.expensemanager.model.PaymentMethodCreditCard</class>
+    <class>eapli.expensemanager.model.PaymentMethodDebitCard</class>
     <properties>
       <property name="hibernate.connection.username" value="sa"/>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>

@@ -4,7 +4,10 @@
  */
 package eapli.expensemanager.model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -17,10 +20,16 @@ import javax.persistence.InheritanceType;
  * @author schmitzoide
  */ 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS )
-public abstract class PaymentMethod  {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE )
+public abstract class PaymentMethod  implements Serializable{
     @Id
-    private int id_paymentMethod;
+    @GeneratedValue
+    private Integer id_paymentMethod;
+    
+    public Integer getID()
+    {
+        return id_paymentMethod;
+    }
 
   
     //FIX: is the enumartion really necessary?

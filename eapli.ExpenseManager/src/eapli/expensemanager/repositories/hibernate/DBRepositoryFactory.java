@@ -33,7 +33,7 @@ public class DBRepositoryFactory implements RepositoryFactory{
 
     @Override
     public PaymentMethodRepository getPaymentMethodRepository() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new DBPaymentMethodRepository();
     }
 
     @Override
