@@ -43,13 +43,15 @@ public class DBExpenseRepository extends JpaHibernateUtil<Expense> implements Ex
     public BigDecimal ExpensesOfWeek(int weekNumber, int year) {
         Calendar first_day = DateTime.firstDateOfWeek(year,weekNumber);
         Calendar last_day = DateTime.lastDateOfWeek(year,weekNumber);
-	return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.AMOUNT) FROM " + entityClass.getSimpleName()+
-                " E WHERE E.DATE>= :D1 AND E.DATE <= :D2").setParameter("D1", first_day).setParameter("D2", last_day).getSingleResult();
+	return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName()+
+                " E WHERE E.date>= :D1 AND E.date <= :D2").setParameter("D1", first_day).setParameter("D2", last_day).getSingleResult();
     }
 
     @Override
     public BigDecimal expensesOfMonth(int month, int year) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
+        // FIXME implement this method
+        return new BigDecimal(0);
     }
 
     @Override
@@ -71,7 +73,8 @@ public class DBExpenseRepository extends JpaHibernateUtil<Expense> implements Ex
 
     @Override
     public BigDecimal getTotal() {
-        return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.AMOUNT) FROM " + entityClass.getSimpleName()).getSingleResult();
+        BigDecimal total =  (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName() + " E").getSingleResult();
+        return (total == null? new BigDecimal(0) : total);
     }
 
 }

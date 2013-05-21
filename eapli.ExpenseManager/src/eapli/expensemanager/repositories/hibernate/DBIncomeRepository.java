@@ -36,7 +36,8 @@ public class DBIncomeRepository extends JpaHibernateUtil<IncomeType> implements 
 
     @Override
     public BigDecimal getTotal() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return (BigDecimal.ZERO);
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
     
     
