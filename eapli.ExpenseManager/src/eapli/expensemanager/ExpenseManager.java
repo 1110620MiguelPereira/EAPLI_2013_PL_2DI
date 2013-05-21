@@ -22,20 +22,22 @@ public class ExpenseManager {
      */
     public static void main(String[] args) {
         
-        BootstrapExpenses expenseTest = new BootstrapExpenses();
-        expenseTest.createExpenses();
+        BootstrapPaymentMethod method=new BootstrapPaymentMethod();
+        method.createPaymentMethods();
         
         BootstrapExpenseType expenseType = new BootstrapExpenseType();
         expenseType.createExpenseType();
         
-        BootstrapIncomes incomes = new BootstrapIncomes();
-        incomes.createIncomes();
-        
         BootstrapIncomeType incomeType = new BootstrapIncomeType();
         incomeType.createIncomeType();
         
-        BootstrapPaymentMethod method=new BootstrapPaymentMethod();
-        method.createPaymentMethods();
+        BootstrapIncomes incomes = new BootstrapIncomes();
+        incomes.createIncomes();
+        
+        
+        BootstrapExpenses expenseTest = new BootstrapExpenses();
+        expenseTest.createExpenses();
+        
         
         MenuUI menu = new MenuUI();
         menu.show();

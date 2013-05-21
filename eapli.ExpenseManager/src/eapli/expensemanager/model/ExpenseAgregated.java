@@ -11,6 +11,7 @@ import java.util.Map;
  *
  * @author Fábio Queirós
  */
+
 public class ExpenseAgregated {
 
     Map<ExpenseType, Agregation> map = new HashMap() {
