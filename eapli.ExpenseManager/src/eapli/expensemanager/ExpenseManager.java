@@ -31,13 +31,13 @@ public class ExpenseManager {
         BootstrapIncomeType incomeType = new BootstrapIncomeType();
         incomeType.createIncomeType();
 
-//        BootstrapIncomes incomes = new BootstrapIncomes();
-//        incomes.createIncomes();
-//
-//
-//        BootstrapExpenses expenseTest = new BootstrapExpenses();
-//        expenseTest.createExpenses();
-//
+        BootstrapIncomes incomes = new BootstrapIncomes();
+        incomes.createIncomes();
+
+
+        BootstrapExpenses expenseTest = new BootstrapExpenses();
+        expenseTest.createExpenses();
+
 
         MenuUI menu = new MenuUI();
         menu.show();
