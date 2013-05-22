@@ -35,6 +35,6 @@ public abstract class PaymentMethodCard extends PaymentMethod implements java.io
 
     @Override
     public String toString() {
-        return "\n"+super.toString()+"Card number: " + number + "\nbank name: " + bankName;
+        return "\n"+super.toString()+"Card number: " + number + "\nbank name: " + bankName+"\n";
     }
 }
