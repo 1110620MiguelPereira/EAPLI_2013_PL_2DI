@@ -38,4 +38,5 @@ public class DBPaymentMethodRepository extends JpaHibernateUtil<PaymentMethod> i
     {
         return (List)findAll();
     }
+    
 }

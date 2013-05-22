@@ -28,13 +28,15 @@ public class DBExpenseRepository extends JpaHibernateUtil<Expense> implements Ex
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         
-        Expense e = findByPrimaryKey(expense.getID_Movement());
-        if (e == null) {
-            create(expense);
-        }else{
-            update(expense);
+        if(expense.getID_Movement()==null)
+        {
+            //em.persist(expense);
+            em.merge(expense);
+        }else
+        {
+            em.merge(expense);
         }
-        
+                
         tx.commit();
         em.close();
     }
@@ -44,14 +46,15 @@ public class DBExpenseRepository extends JpaHibernateUtil<Expense> implements Ex
         Calendar first_day = DateTime.firstDateOfWeek(year,weekNumber);
         Calendar last_day = DateTime.lastDateOfWeek(year,weekNumber);
 	return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName()+
-                " E WHERE E.date>= :D1 AND E.date <= :D2").setParameter("D1", first_day).setParameter("D2", last_day).getSingleResult();
+                " E WHERE E.movement_date>= :D1 AND E.movement_date <= :D2").setParameter("D1", first_day).setParameter("D2", last_day).getSingleResult();
     }
 
     @Override
     public BigDecimal expensesOfMonth(int month, int year) {
-        //throw new UnsupportedOperationException("Not supported yet.");
-        // FIXME implement this method
-        return new BigDecimal(0);
+        Calendar beginOfMonth = DateTime.newCalendarDate(year, month, 1);
+        Calendar endOfMonth = DateTime.newCalendarDate(year, month, (beginOfMonth.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH)));
+        return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName()+
+                " E WHERE E.movement_date>= :D1 AND E.movement_date <= :D2").setParameter("D1", beginOfMonth).setParameter("D2", endOfMonth).getSingleResult();
     }
 
     @Override

@@ -19,7 +19,7 @@ import javax.persistence.Transient;
 @Entity
 public class Expense extends Movement implements Serializable {
    
-    // @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     //TODO quando o mapeamento da interface paymentMethod 
     //..e as classes que a implementam estiver realizado descomentar a linha acima e retirar o transient
    
@@ -40,15 +40,15 @@ public class Expense extends Movement implements Serializable {
     }
     
     public boolean occursAt(int year, int weekNumber) {
-        return date.get(Calendar.YEAR)==year && date.get(Calendar.WEEK_OF_YEAR)==weekNumber;
+        return movement_date.get(Calendar.YEAR)==year && movement_date.get(Calendar.WEEK_OF_YEAR)==weekNumber;
     }
     public boolean occursAtMonth(int month, int year) {
-        return date.get(Calendar.YEAR)==year && date.get(Calendar.MONTH)+1==month;         
+        return movement_date.get(Calendar.YEAR)==year && movement_date.get(Calendar.MONTH)+1==month;         
     }
     public boolean occursBetweenDates(Calendar initDate,Calendar finalDate){
        
-        int month_date=date.get(Calendar.MONTH)+1;
-        int year_date=date.get(Calendar.YEAR);
+        int month_date=movement_date.get(Calendar.MONTH)+1;
+        int year_date=movement_date.get(Calendar.YEAR);
         int month_initDate=initDate.get(Calendar.MONTH)+1;
         int year_initDate =initDate.get(Calendar.YEAR);
         int month_finalDate=finalDate.get(Calendar.MONTH)+1;

@@ -30,6 +30,13 @@ public abstract class PaymentMethod  implements Serializable{
     {
         return id_paymentMethod;
     }
+    
+     @Override
+    public String toString()
+    {
+        return "ID:"+getID()+"\n";
+    }
+    
 
   
     //FIX: is the enumartion really necessary?
