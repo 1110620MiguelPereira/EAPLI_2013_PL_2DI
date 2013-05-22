@@ -21,40 +21,36 @@ import javax.persistence.EntityTransaction;
  *
  * @author schmitzoide
  */
-public class DBIncomeRepository extends JpaHibernateUtil<IncomeType> implements IncomeRepository {
-
-
+public class DBIncomeRepository extends JpaHibernateUtil<Income> implements IncomeRepository {
 
     @Override
-    public void save(Income income) {        
+    public void save(Income income) {
         EntityManager em = getEntityManager();
         assert em != null;
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        
-        if(income.getID_Movement()==null)
-        {
+
+        if (income.getID_Movement() == null) {
             //em.persist(expense);
             em.merge(income);
-        }else
-        {
+        } else {
             em.merge(income);
         }
-                
+
         tx.commit();
         em.close();
     }
 
     @Override
     public List<Income> getAll() {
-        return (List)findAll();
+        return (List) findAll();
     }
 
     @Override
     public BigDecimal getTotal() {
-        return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.AMOUNT) FROM " + entityClass.getSimpleName()).getSingleResult();
+        BigDecimal total = (BigDecimal) getEntityManager().
+                createQuery("SELECT SUM(E.amount) FROM " + entityClass.
+                getSimpleName() + " E").getSingleResult();
+        return (total == null ? new BigDecimal(0) : total);
     }
-    
-    
-    
 }

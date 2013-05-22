@@ -78,7 +78,8 @@ public class DBExpenseRepository extends JpaHibernateUtil<Expense> implements Ex
 
     @Override
     public BigDecimal getTotal() {
-        return (BigDecimal)getEntityManager().createQuery("SELECT SUM(amount) FROM " + entityClass.getSimpleName()).getSingleResult();
+        BigDecimal total =  (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName() + " E").getSingleResult();
+        return (total == null? new BigDecimal(0) : total);
     }
 
 }

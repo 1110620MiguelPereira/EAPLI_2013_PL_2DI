@@ -12,4 +12,10 @@ public class PaymentMethodCreditCard extends PaymentMethodCard {
     public PaymentMethodCreditCard(String number, String bankName) {
         super(number, bankName);
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Credit Card"+super.toString();
+    }
 }

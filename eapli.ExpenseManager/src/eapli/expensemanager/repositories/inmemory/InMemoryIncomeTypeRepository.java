@@ -35,5 +35,10 @@ public class InMemoryIncomeTypeRepository implements IncomeTypeRepository{
     public void save(IncomeType incType) {
         incomeTypes.add(incType);
     }
+
+    @Override
+    public boolean findById(String shortName) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }
