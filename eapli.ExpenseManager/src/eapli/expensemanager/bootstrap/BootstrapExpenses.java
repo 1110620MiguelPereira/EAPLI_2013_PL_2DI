@@ -49,10 +49,10 @@ public class BootstrapExpenses
         Expense e1 = new Expense(amount,"Corn",2,3,2012,paymentMethods.get(0),expenseTypes.get(0)); 
         
         amount = new BigDecimal("600");
-        Expense e2 = new Expense(amount,"Computer",8,4,2013,paymentMethods.get(1),expenseTypes.get(0)); 
+        Expense e2 = new Expense(amount,"Computer",8,5,2013,paymentMethods.get(1),expenseTypes.get(0)); 
         
         amount = new BigDecimal("15");
-        Expense e3 = new Expense(amount,"Mouse",9,4,2013,paymentMethods.get(0),expenseTypes.get(1)); 
+        Expense e3 = new Expense(amount,"Mouse",9,5,2013,paymentMethods.get(0),expenseTypes.get(1)); 
         
         amount = new BigDecimal("20.99");
         Expense e4 = new Expense(amount,"Keybord",2,3,2013,paymentMethods.get(1),expenseTypes.get(1)); 
