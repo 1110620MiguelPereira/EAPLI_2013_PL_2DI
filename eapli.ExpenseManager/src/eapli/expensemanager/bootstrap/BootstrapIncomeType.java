@@ -13,16 +13,16 @@ import eapli.expensemanager.repositories.PersistenceFactory;
  * @author Pedro Branco
  */
 public class BootstrapIncomeType {
-    
-     public void createIncomeType()
-    {
-    IncomeTypeRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory().getIncomeTypeRepository();
-    
-    IncomeType income = new IncomeType("Salário","Salário mensal");
-    IncomeType income1 = new IncomeType("Bonus","Bonus salarial");
-    IncomeType income2 = new IncomeType("Mesada","Mesada");
-    
-   repositorio.save(income);
-   repositorio.save(income1);
+
+    public void createIncomeType() {
+        IncomeTypeRepository repositorio = PersistenceFactory.instance().buildRepositoryFactory().getIncomeTypeRepository();
+
+        IncomeType income = new IncomeType("Salário", "Salário mensal");
+        IncomeType income1 = new IncomeType("Bonus", "Bonus salarial");
+        IncomeType income2 = new IncomeType("Mesada", "Mesada");
+
+        repositorio.save(income);
+        repositorio.save(income1);
+        repositorio.save(income2);
     }
 }
