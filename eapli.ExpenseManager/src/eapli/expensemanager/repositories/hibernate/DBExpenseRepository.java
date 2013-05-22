@@ -45,16 +45,18 @@ public class DBExpenseRepository extends JpaHibernateUtil<Expense> implements Ex
     public BigDecimal ExpensesOfWeek(int weekNumber, int year) {
         Calendar first_day = DateTime.firstDateOfWeek(year,weekNumber);
         Calendar last_day = DateTime.lastDateOfWeek(year,weekNumber);
-	return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName()+
+        BigDecimal weekSpending = (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName()+
                 " E WHERE E.movement_date>= :D1 AND E.movement_date <= :D2").setParameter("D1", first_day).setParameter("D2", last_day).getSingleResult();
+	return (weekSpending == null ? new BigDecimal(0) : weekSpending); 
     }
 
     @Override
     public BigDecimal expensesOfMonth(int month, int year) {
         Calendar beginOfMonth = DateTime.newCalendarDate(year, month, 1);
         Calendar endOfMonth = DateTime.newCalendarDate(year, month, (beginOfMonth.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH)));
-        return (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName()+
+        BigDecimal monthSpending = (BigDecimal)getEntityManager().createQuery("SELECT SUM(E.amount) FROM " + entityClass.getSimpleName()+
                 " E WHERE E.movement_date>= :D1 AND E.movement_date <= :D2").setParameter("D1", beginOfMonth).setParameter("D2", endOfMonth).getSingleResult();
+        return (monthSpending == null ? new BigDecimal(0) : monthSpending);
     }
 
     @Override
